@@ -78,9 +78,17 @@ export default function Home() {
   const [angleMultFactor, setAngleMultFactor] = useState(0);
   const intervalId = useRef<NodeJS.Timer>();
 
-  useEffect(() => {
-    const fullWidth = 40;
-    const unit = "vw";
+  const resetScales = () => {
+    var fullWidth = 40;
+    var unit = "vw";
+
+    if (window.innerWidth * 0.4 > 500) {
+      fullWidth = 500;
+      unit = "px";
+    } else if (window.innerWidth * 0.4 < 300) {
+      fullWidth = 300;
+      unit = "px";
+    }
 
     setZTranslate(
       Math.round(
@@ -88,15 +96,24 @@ export default function Home() {
       ).toString() + unit
     );
     setAngleMultFactor(Math.round(360 / project_data.length));
-  }, []);
+  };
 
-  useEffect(() => {
+  const resetCarousel = () => {
     if (intervalId.current) {
       clearInterval(intervalId.current);
     }
     intervalId.current = setInterval(() => {
       setCurrIndex((ind) => ind + 1);
     }, 2000);
+  };
+
+  useEffect(() => {
+    resetScales();
+    window.addEventListener("resize", resetScales);
+  }, []);
+
+  useEffect(() => {
+    resetCarousel();
     return () => {
       if (intervalId.current) {
         clearInterval(intervalId.current);
@@ -116,6 +133,32 @@ export default function Home() {
           >
             projects
           </h1>
+          <button
+            onClick={() => {
+              setCurrIndex((ind) => ind - 1);
+              resetCarousel();
+            }}
+          >
+            &lt;
+          </button>
+          <button
+            onMouseDown={() => {
+              if (intervalId.current) {
+                clearInterval(intervalId.current);
+              }
+            }}
+            onMouseUp={() => resetCarousel()}
+          >
+            hold to pause
+          </button>
+          <button
+            onClick={() => {
+              setCurrIndex((ind) => ind + 1);
+              resetCarousel();
+            }}
+          >
+            &gt;
+          </button>
         </div>
         <div className={styles.carousel_scene}>
           <div
