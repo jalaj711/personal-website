@@ -3,43 +3,10 @@
   font-weight: 100;
 }
 
-.headers {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100%;
-  z-index: 25;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-}
-
-.primary_header {
-  margin: 0;
-  /* position: absolute; */
-  width: 50%;
-  text-align: center;
-  /* top: 24px; */
-  line-height: 1;
-  font-size: 7vw;
-}
-
-.secondary_header {
-  margin: 0;
-  /* position: absolute; */
-  width: 70%;
-  text-align: center;
-  /* bottom: 24px; */
-  line-height: 1;
-  font-size: 9vw;
-}
-
-
 .section {
   width: 100vw;
-  min-height: 100vh;
-  max-height: 100vh;
+  min-height: 500vh;
+  /* max-height: 100vh; */
   background-color: black;
   color: white;
   display: flex;
@@ -49,14 +16,66 @@
   overflow: hidden;
 }
 
+
+.headers {
+  width: 100%;
+  height: 100vh;
+  z-index: 25;
+  position: absolute;
+  top: 300vh;
+}
+
+.in_view_header {
+  top: 50%;
+  left: 50%;
+  position: fixed;
+  transform: translate(-50%, -50%);
+}
+
+.headers_wrapper {
+  width: 100vw;
+  height: 100vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  display: flex;
+}
+
+.primary_header {
+  margin: 0;
+  /* position: absolute; */
+  width: 50%;
+  text-align: center;
+  /* top: 24px; */
+  line-height: 1;
+  font-size: clamp(64px, 7vw, 108px);
+}
+
+.secondary_header {
+  margin: 0;
+  margin-top: 24px;
+  /* position: absolute; */
+  width: 70%;
+  text-align: center;
+  /* bottom: 24px; */
+  line-height: 1;
+  font-size: clamp(64px, 9vw, 120px);
+}
+
+@media (max-width: 600px) {
+  .primary_header, .secondary_header { width: 80%; }
+}
+
 .project_container {
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
-  filter: brightness(0.6);
+  filter: brightness(0.8);
   z-index: 10;
+  height: 100vh;
 }
 
 .secondary_1,
@@ -73,29 +92,32 @@
 .secondary_1,
 .secondary_2 {
   position: absolute;
-  width: 20vw;
+  width: clamp(150px, 20vw, 300px);
 }
 
 .secondary_1 {
-  top: 15px;
+  top: -15vh;
   left: -15vw;
-  height: 15vw;
+  height: clamp(120px, 15vw, 200px);
 }
 
 .secondary_2 {
-  bottom: 10vh;
+  bottom: -20vh;
   right: -10vw;
-  height: 20vh;
+  height: clamp(140px, 20vw, 250px);
 }
 
 .primary {
   position: relative;
-  width: 40vw;
-  height: 60vh;
+  width:clamp(300px, 40vw, 600px);
+  height: clamp(225px, 30vw, 450px);
 }
 
 .project_wrapper {
-  position: relative;
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  height: 300vh;
 }
 
 .background_shadow {
