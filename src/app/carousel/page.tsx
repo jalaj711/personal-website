@@ -1,4 +1,4 @@
-'use client'
+"use client";
 
 import styles from "./page.module.css";
 import { Brush, NT } from "src/fonts";
@@ -13,27 +13,27 @@ const project_data = [
       "some description about project 1.some description about project 1.some description about project 1.some description about project 1.some description about project 1.some description about project 1.",
   },
   {
-    title: "project 1",
+    title: "project 2",
     description:
       "some description about project 1.some description about project 1.some description about project 1.some description about project 1.some description about project 1.some description about project 1.",
   },
   {
-    title: "project 1",
+    title: "project 3",
     description:
       "some description about project 1.some description about project 1.some description about project 1.some description about project 1.some description about project 1.some description about project 1.",
   },
   {
-    title: "project 1",
+    title: "project 4",
     description:
       "some description about project 1.some description about project 1.some description about project 1.some description about project 1.some description about project 1.some description about project 1.",
   },
   {
-    title: "project 1",
+    title: "project 5",
     description:
       "some description about project 1.some description about project 1.some description about project 1.some description about project 1.some description about project 1.some description about project 1.",
   },
   {
-    title: "project 1",
+    title: "project 6",
     description:
       "some description about project 1.some description about project 1.some description about project 1.some description about project 1.some description about project 1.some description about project 1.",
   },
@@ -44,6 +44,7 @@ const CarouselCell = (props: {
   description: string;
   rotation: number;
   zTranslate: number | string;
+  showText?: boolean;
 }) => {
   return (
     <div
@@ -57,12 +58,15 @@ const CarouselCell = (props: {
           className={styles.carousel_cell_picture}
           style={{ backgroundImage: `url(${secondaryBg.src})` }}
         ></div>
-        {/* <div className={styles.carousel_cell_text}>
+        <div
+          className={styles.carousel_cell_text}
+          style={{ opacity: props.showText ? 1 : 0 }}
+        >
           <div className={styles.carousel_cell_header}>{props.title}</div>
           <div className={styles.carousel_cell_description}>
             {props.description}
           </div>
-        </div> */}
+        </div>
       </div>
     </div>
   );
@@ -72,6 +76,7 @@ export default function Home() {
   const [currIndex, setCurrIndex] = useState(0);
   const [zTranslate, setZTranslate] = useState("");
   const [angleMultFactor, setAngleMultFactor] = useState(0);
+  const intervalId = useRef<NodeJS.Timer>();
 
   useEffect(() => {
     const fullWidth = 40;
@@ -79,10 +84,24 @@ export default function Home() {
 
     setZTranslate(
       Math.round(
-        fullWidth  / 1.7 / Math.tan(Math.PI / project_data.length)
+        fullWidth / 1.9 / Math.tan(Math.PI / project_data.length)
       ).toString() + unit
     );
     setAngleMultFactor(Math.round(360 / project_data.length));
+  }, []);
+
+  useEffect(() => {
+    if (intervalId.current) {
+      clearInterval(intervalId.current);
+    }
+    intervalId.current = setInterval(() => {
+      setCurrIndex((ind) => ind + 1);
+    }, 2000);
+    return () => {
+      if (intervalId.current) {
+        clearInterval(intervalId.current);
+      }
+    };
   }, []);
   return (
     <main>
@@ -99,13 +118,21 @@ export default function Home() {
           </h1>
         </div>
         <div className={styles.carousel_scene}>
-          <div className={styles.carousel}>
+          <div
+            className={styles.carousel}
+            style={{
+              transform: `translateZ(-${zTranslate}) rotateY(-${
+                currIndex * angleMultFactor
+              }deg)`,
+            }}
+          >
             {project_data.map((elem, index) => (
               <CarouselCell
                 title={elem.title}
                 description={elem.description}
                 rotation={index * angleMultFactor}
                 zTranslate={zTranslate}
+                showText={currIndex % project_data.length === index}
                 key={elem.title + index}
               />
             ))}
