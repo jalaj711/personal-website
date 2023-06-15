@@ -44,13 +44,14 @@ const CarouselCell = (props: {
   description: string;
   rotation: number;
   zTranslate: number | string;
+  yTranslate: number | string;
   showText?: boolean;
 }) => {
   return (
     <div
       className={styles.carousel_cell}
       style={{
-        transform: `rotateY(${props.rotation}deg) translateZ(${props.zTranslate})`,
+        transform: `rotateY(${props.rotation}deg) translateZ(${props.zTranslate}) translateY(${props.yTranslate})`,
       }}
     >
       <div className={styles.carousel_cell_wrapper}>
@@ -73,10 +74,17 @@ const CarouselCell = (props: {
 };
 
 export default function Home() {
-  const [currIndex, setCurrIndex] = useState(0);
+  const MAX_RATIO = 2;
   const [zTranslate, setZTranslate] = useState("");
   const [angleMultFactor, setAngleMultFactor] = useState(0);
-  const intervalId = useRef<NodeJS.Timer>();
+  const [ratio, setRatio] = useState(0);
+
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      var _ratio = window.scrollY / window.innerHeight - 0.5;
+      _ratio < MAX_RATIO && setRatio(_ratio);
+    });
+  }, []);
 
   const resetScales = () => {
     var fullWidth = 40;
@@ -98,87 +106,45 @@ export default function Home() {
     setAngleMultFactor(Math.round(360 / project_data.length));
   };
 
-  const resetCarousel = () => {
-    if (intervalId.current) {
-      clearInterval(intervalId.current);
-    }
-    intervalId.current = setInterval(() => {
-      setCurrIndex((ind) => ind + 1);
-    }, 2000);
-  };
-
   useEffect(() => {
     resetScales();
     window.addEventListener("resize", resetScales);
   }, []);
 
-  useEffect(() => {
-    resetCarousel();
-    return () => {
-      if (intervalId.current) {
-        clearInterval(intervalId.current);
-      }
-    };
-  }, []);
   return (
     <main>
       <section className={styles.section}>
-        {/* <h1 className={[styles.h1, NT.className].join(" ")}>JALAJ</h1>
-        <h1 className={[MillionDreams.className].join(" ")}>Web Developer</h1> */}
-        <div className={styles.headers}>
-          <h1
-            className={[styles.h1, NT.className, styles.primary_header].join(
-              " "
-            )}
-          >
-            projects
-          </h1>
-          <button
-            onClick={() => {
-              setCurrIndex((ind) => ind - 1);
-              resetCarousel();
-            }}
-          >
-            &lt;
-          </button>
-          <button
-            onMouseDown={() => {
-              if (intervalId.current) {
-                clearInterval(intervalId.current);
-              }
-            }}
-            onMouseUp={() => resetCarousel()}
-          >
-            hold to pause
-          </button>
-          <button
-            onClick={() => {
-              setCurrIndex((ind) => ind + 1);
-              resetCarousel();
-            }}
-          >
-            &gt;
-          </button>
-        </div>
-        <div className={styles.carousel_scene}>
-          <div
-            className={styles.carousel}
-            style={{
-              transform: `translateZ(-${zTranslate}) rotateY(-${
-                currIndex * angleMultFactor
-              }deg)`,
-            }}
-          >
-            {project_data.map((elem, index) => (
-              <CarouselCell
-                title={elem.title}
-                description={elem.description}
-                rotation={index * angleMultFactor}
-                zTranslate={zTranslate}
-                showText={currIndex % project_data.length === index}
-                key={elem.title + index}
-              />
-            ))}
+        <div className={styles.section_wrapper}>
+            <div className={styles.headers}>
+              <h1
+                className={[styles.h1, NT.className, styles.primary_header].join(
+                  " "
+                )}
+              >
+                projects
+              </h1>
+            </div>
+          <div className={styles.carousel_scene}>
+            <div
+              className={styles.carousel}
+              style={{
+                transform: `translateZ(-${zTranslate}) rotateY(${
+                  (-ratio * (360 - angleMultFactor)) / MAX_RATIO
+                }deg)`,
+              }}
+            >
+              {project_data.map((elem, index) => (
+                <CarouselCell
+                  title={elem.title}
+                  description={elem.description}
+                  rotation={index * angleMultFactor}
+                  zTranslate={zTranslate}
+                  showText={Math.abs(((ratio * (360 - angleMultFactor)) / MAX_RATIO) - (index * angleMultFactor)) < angleMultFactor/2}
+                  key={elem.title + index}
+                  yTranslate={`${-ratio / MAX_RATIO * 100 * (project_data.length - 1)}%`}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </section>

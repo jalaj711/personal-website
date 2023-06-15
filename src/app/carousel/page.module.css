@@ -4,12 +4,9 @@
 }
 
 .headers {
-  /* position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); */
   width: 100%;
-  z-index: 25;
+  z-index: 5;
+  position: relative;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -18,25 +15,31 @@
 
 .primary_header {
   margin: 0;
-  /* position: absolute; */
   text-align: center;
-  /* top: 24px; */
   line-height: 1;
-  font-size: 7vw;
+  font-size: clamp(64px, 7vw, 108px);
 }
 
 .section {
   width: 100vw;
-  min-height: 100vh;
-  max-height: 100vh;
-  background-color: white;
-  color: black;
+  height: 400vh;
+  background-color: black;
+  color: white;
+  position:relative;
+}
+
+.section_wrapper {
+  width: 100vw;
+  height: 100vh;
   display: flex;
-  /* flex-direction: column; */
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  position: fixed;
+  top: 0;
 }
+
 @media (max-width: 1285px) {
   .section {
     flex-direction: column;
@@ -48,8 +51,8 @@
   height: 60vh;
   position: relative;
   perspective: 1000px;
-  display: flex;
-  justify-content: center;
+  margin-top: 72px;
+  z-index: 10;
 }
 
 .carousel {
@@ -57,20 +60,13 @@
   height: 100%;
   position: absolute;
   transform-style: preserve-3d;
-  /* animation: rotate 20s linear infinite; */
-  transition: transform 0.5s ease-in-out;
+  /* transition: transform 0.5s ease-in-out; */
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  /* justify-content: center; */
 }
-/* 
-@keyframes rotate {
-  from { transform: translateZ(-70vw) rotateY(0deg); }
-  to { transform: translateZ(-70vw) rotateY(360deg); }
-} */
-
 .carousel_cell {
-  position: absolute;
   width: clamp(300px, 40vw, 500px);
   /* height: clamp(225px, 30vw, 375px); */
   perspective: 1000px;
@@ -83,8 +79,6 @@
 }
 
 .carousel_cell_picture {
-  /* width: 100%;
-  height: 100%; */
   width: clamp(300px, 40vw, 500px);
   height: clamp(225px, 30vw, 375px);
   border-radius: 24px;
@@ -94,10 +88,6 @@
 }
 
 .carousel_cell_text {
-  /* position: absolute;
-  left: 50%;
-  bottom: -20%;
-  transform: translateX(-50%) translateZ(50px); */
   text-align: center;
   width: 100%;
   transition: all 0.5s ease-in-out;
