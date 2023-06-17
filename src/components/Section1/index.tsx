@@ -7,9 +7,10 @@ import { useEffect, useRef, useState } from "react";
 
 export default function Section1(props: { ratio: number }) {
   const secondaryTextRef = useRef<HTMLHeadingElement | null>(null);
+  const MAX_RATIO = 3
 
   useEffect(() => {
-      if (secondaryTextRef.current) {
+      if (secondaryTextRef.current && props.ratio > 0 && props.ratio < MAX_RATIO) {
         const values = ["appealing", "scalable", "real time", "reliable"];
         if (props.ratio < 0.3) secondaryTextRef.current.innerText = values[0];
         else if (props.ratio > 0.7 && props.ratio < 1.3)
@@ -35,8 +36,8 @@ export default function Section1(props: { ratio: number }) {
         <div
           className={[
             styles.headers,
-            props.ratio > 0 && styles.in_view_header,
-            props.ratio > 3 && styles.out_of_view_wrapper
+            props.ratio > 0 && props.ratio < MAX_RATIO && styles.in_view_header,
+            props.ratio > MAX_RATIO && styles.out_of_view_wrapper
           ].join(" ")}
         >
           <div className={styles.headers_wrapper}>
