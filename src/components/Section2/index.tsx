@@ -110,62 +110,58 @@ export default function Section2(props: { ratio: number }) {
   }, []);
 
   return (
-    <main>
-      <section className={styles.section}>
-        <div
-          className={[
-            styles.section_wrapper,
-            props.ratio > 0 && styles.in_view_wrapper,
-            props.ratio > MAX_RATIO + 1 && styles.out_of_view_wrapper,
-          ].join(" ")}
-        >
-          <div className={styles.carousel_scene}>
-            <div className={styles.headers}>
-              <h1
-                className={[
-                  styles.h1,
-                  NT.className,
-                  styles.primary_header,
-                ].join(" ")}
-                style={{
-                  transform: `translateZ(-${zTranslate})`,
-                  opacity: ratio > 0 ? 0.6 : 1,
-                }}
-              >
-                Projects
-              </h1>
-            </div>
-            <div
-              className={styles.carousel}
+    <section className={styles.section}>
+      <div
+        className={[
+          styles.section_wrapper,
+          props.ratio > 0 && styles.in_view_wrapper,
+          props.ratio > MAX_RATIO + 1 && styles.out_of_view_wrapper,
+        ].join(" ")}
+      >
+        <div className={styles.carousel_scene}>
+          <div className={styles.headers}>
+            <h1
+              className={[styles.h1, NT.className, styles.primary_header].join(
+                " "
+              )}
               style={{
-                transform: `translateZ(-${zTranslate}) rotateY(${
-                  (-ratio * (360 - angleMultFactor)) / MAX_RATIO
-                }deg)`,
+                transform: `translateZ(-${zTranslate})`,
+                opacity: ratio > 0 ? 0.6 : 1,
               }}
             >
-              {project_data.map((elem, index) => (
-                <CarouselCell
-                  title={elem.title}
-                  description={elem.description}
-                  rotation={index * angleMultFactor}
-                  zTranslate={zTranslate}
-                  showText={
-                    Math.abs(
-                      (ratio * (360 - angleMultFactor)) / MAX_RATIO -
-                        index * angleMultFactor
-                    ) <
-                    angleMultFactor / 3
-                  }
-                  key={elem.title + index}
-                  yTranslate={`${
-                    (-ratio / MAX_RATIO) * 100 * (project_data.length - 1)
-                  }%`}
-                />
-              ))}
-            </div>
+              Projects
+            </h1>
+          </div>
+          <div
+            className={styles.carousel}
+            style={{
+              transform: `translateZ(-${zTranslate}) rotateY(${
+                (-ratio * (360 - angleMultFactor)) / MAX_RATIO
+              }deg)`,
+            }}
+          >
+            {project_data.map((elem, index) => (
+              <CarouselCell
+                title={elem.title}
+                description={elem.description}
+                rotation={index * angleMultFactor}
+                zTranslate={zTranslate}
+                showText={
+                  Math.abs(
+                    (ratio * (360 - angleMultFactor)) / MAX_RATIO -
+                      index * angleMultFactor
+                  ) <
+                  angleMultFactor / 3
+                }
+                key={elem.title + index}
+                yTranslate={`${
+                  (-ratio / MAX_RATIO) * 100 * (project_data.length - 1)
+                }%`}
+              />
+            ))}
           </div>
         </div>
-      </section>
-    </main>
+      </div>
+    </section>
   );
 }
