@@ -14,7 +14,14 @@ export default function Home() {
   console.log(ratio);
 
   useEffect(() => {
-     document.body.addEventListener("scroll", () => {
+    "ontouchstart" in window ||
+    navigator.maxTouchPoints > 0 ||
+    //@ts-ignore
+    navigator.msMaxTouchPoints > 0
+      ? document.body.addEventListener("touchmove", () => {
+          setRatio(window.scrollY / window.innerHeight);
+        })
+      : document.body.addEventListener("scroll", () => {
           setRatio(window.scrollY / window.innerHeight);
         });
   }, []);
