@@ -35,7 +35,8 @@ export default function Section1(props: { ratio: number }) {
         <div
           className={[
             styles.headers,
-            props.ratio < 3 ? styles.in_view_header : "",
+            props.ratio > 0 && styles.in_view_header,
+            props.ratio > 3 && styles.out_of_view_wrapper
           ].join(" ")}
         >
           <div className={styles.headers_wrapper}>

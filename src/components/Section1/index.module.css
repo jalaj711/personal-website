@@ -14,6 +14,7 @@
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  position: relative;
 }
 
 .headers {
@@ -21,6 +22,10 @@
   height: 100vh;
   z-index: 25;
   position: absolute;
+  top: 0;
+}
+
+.out_of_view_wrapper {
   top: 300vh;
 }
 
