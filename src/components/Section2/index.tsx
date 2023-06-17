@@ -78,8 +78,8 @@ export default function Section2(props: { ratio: number }) {
   const [ratio, setRatio] = useState(-0.5);
 
   useEffect(() => {
-      var _ratio = props.ratio - 0.5;
-      _ratio > -0.5 && _ratio < MAX_RATIO && setRatio(_ratio);
+    var _ratio = props.ratio - 0.5;
+    _ratio > -0.5 && _ratio < MAX_RATIO + 0.5 && setRatio(_ratio);
   }, [props.ratio]);
 
   const resetScales = () => {
@@ -87,7 +87,7 @@ export default function Section2(props: { ratio: number }) {
     var unit = "vw";
 
     if (window.innerWidth * 0.4 > 500) {
-      fullWidth = 500;
+      fullWidth = 600;
       unit = "px";
     } else if (window.innerWidth * 0.4 < 300) {
       fullWidth = 300;
@@ -96,7 +96,9 @@ export default function Section2(props: { ratio: number }) {
 
     setZTranslate(
       Math.round(
-        fullWidth / 1.3 / Math.tan(Math.PI / project_data.length)
+        fullWidth /
+          (fullWidth === 600 ? 1 : 1.5) /
+          Math.tan(Math.PI / project_data.length)
       ).toString() + unit
     );
     setAngleMultFactor(Math.round(360 / project_data.length));
@@ -110,7 +112,13 @@ export default function Section2(props: { ratio: number }) {
   return (
     <main>
       <section className={styles.section}>
-        <div className={[styles.section_wrapper, props.ratio > 0 && styles.in_view_wrapper, props.ratio > MAX_RATIO + 0.5 && styles.out_of_view_wrapper].join(' ')}>
+        <div
+          className={[
+            styles.section_wrapper,
+            props.ratio > 0 && styles.in_view_wrapper,
+            props.ratio > MAX_RATIO + 1 && styles.out_of_view_wrapper,
+          ].join(" ")}
+        >
           <div className={styles.carousel_scene}>
             <div className={styles.headers}>
               <h1
@@ -121,7 +129,7 @@ export default function Section2(props: { ratio: number }) {
                 ].join(" ")}
                 style={{
                   transform: `translateZ(-${zTranslate})`,
-                  opacity: ratio > 0 ? 0.6 : 1
+                  opacity: ratio > 0 ? 0.6 : 1,
                 }}
               >
                 Projects

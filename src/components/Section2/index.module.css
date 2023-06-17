@@ -47,7 +47,7 @@
 
 .out_of_view_wrapper {
   position: absolute;
-  top: 250vh;
+  top: 300vh;
 }
 
 @media (max-width: 1285px) {
@@ -75,7 +75,7 @@
   align-items: center;
 }
 .carousel_cell {
-  width: clamp(300px, 40vw, 500px);
+  width: clamp(300px, 40vw, 600px);
   /* height: clamp(225px, 30vw, 375px); */
   perspective: 1000px;
 }
@@ -87,8 +87,8 @@
 }
 
 .carousel_cell_picture {
-  width: clamp(300px, 40vw, 500px);
-  height: clamp(225px, 30vw, 375px);
+  width: clamp(300px, 40vw, 600px);
+  height: clamp(225px, 30vw, 450px);
   border-radius: 24px;
   background-position: center;
   background-repeat: no-repeat;
