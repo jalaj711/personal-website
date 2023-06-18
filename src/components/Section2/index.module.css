@@ -23,7 +23,6 @@
 .section {
   width: 100vw;
   height: 400vh;
-  background-color: black;
   color: white;
   position: relative;
 }

@@ -1,6 +1,6 @@
 "use client";
 import styles from "./index.module.css";
-import { Brush, NT } from "src/fonts";
+import { Brush, MillionDreams, NT } from "src/fonts";
 import primaryBg from "../../../public/images/2.webp";
 import secondaryBg from "../../../public/images/3.webp";
 import { useEffect, useRef, useState } from "react";
@@ -42,7 +42,7 @@ export default function Section1(props: { ratio: number }) {
         >
           <div className={styles.headers_wrapper}>
             <h1
-              className={[styles.h1, NT.className, styles.primary_header].join(
+              className={[styles.h1, MillionDreams.className, styles.primary_header].join(
                 " "
               )}
             >

@@ -1,7 +1,7 @@
 "use client";
 
 import styles from "./index.module.css";
-import { Brush, NT } from "src/fonts";
+import { Brush, MillionDreams, NT } from "src/fonts";
 import secondaryBg from "../../../public/images/3.webp";
 import { useEffect, useRef, useState } from "react";
 
@@ -121,7 +121,7 @@ export default function Section2(props: { ratio: number }) {
         <div className={styles.carousel_scene}>
           <div className={styles.headers}>
             <h1
-              className={[styles.h1, NT.className, styles.primary_header].join(
+              className={[styles.h1, MillionDreams.className, styles.primary_header].join(
                 " "
               )}
               style={{

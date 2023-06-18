@@ -3,8 +3,9 @@
 import styles from "./index.module.css";
 // import { Brush, NT } from "src/fonts";
 import secondaryBg from "../../../public/images/3.webp";
+import bg from "../../../public/images/bg.webp";
 import { createRef, useEffect, useRef, useState } from "react";
-import { Brush } from "src/fonts";
+import { Brush, MillionDreams } from "src/fonts";
 
 const RotatingImagesGear = (props: { rotation: number; reverse?: boolean }) => {
   return (
@@ -104,18 +105,21 @@ export default function Section3(props: { ratio: number }) {
                 : -maxPercentage * 100
               : 0
           }%)`,
+          backgroundImage: `linear-gradient(#0008, #0008), url(${bg.src})`,
         }}
         ref={elemRef}
       >
         <div className={styles.container}>
           <div className={styles.headers}>
-            <h1 className={styles.h1}>Work experience</h1>
+            <h1 className={[styles.h1, MillionDreams.className].join(" ")}>
+              Work experience
+            </h1>
           </div>
         </div>
         <div className={styles.container}>
           <RotatingImagesGear
             rotation={
-              (ratio > 0 ? (ratio < MAX_RATIO ? ratio : MAX_RATIO) : 0) * 180 +
+              (ratio > 0 ? (ratio < MAX_RATIO ? ratio : MAX_RATIO) : 0) * 30 +
               30
             }
             reverse
@@ -160,8 +164,7 @@ export default function Section3(props: { ratio: number }) {
           </div>
           <RotatingImagesGear
             rotation={
-              (ratio > 0 ? (ratio < MAX_RATIO ? -ratio : -MAX_RATIO) : 0) *
-                180 +
+              (ratio > 0 ? (ratio < MAX_RATIO ? -ratio : -MAX_RATIO) : 0) * 30 +
               30
             }
           />
@@ -169,7 +172,7 @@ export default function Section3(props: { ratio: number }) {
         <div className={styles.container}>
           <RotatingImagesGear
             rotation={
-              (ratio > 0 ? (ratio < MAX_RATIO ? ratio : MAX_RATIO) : 0) * 180
+              (ratio > 0 ? (ratio < MAX_RATIO ? ratio : MAX_RATIO) : 0) * 30
             }
             reverse
           />
@@ -213,7 +216,7 @@ export default function Section3(props: { ratio: number }) {
           </div>
           <RotatingImagesGear
             rotation={
-              (ratio > 0 ? (ratio < MAX_RATIO ? -ratio : -MAX_RATIO) : 0) * 180
+              (ratio > 0 ? (ratio < MAX_RATIO ? -ratio : -MAX_RATIO) : 0) * 30
             }
           />
         </div>

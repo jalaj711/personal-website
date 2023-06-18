@@ -14,7 +14,6 @@
 .section {
   width: 100vw;
   height: 400vh;
-  background-color: black;
   color: white;
   position: relative;
 }
@@ -76,7 +75,7 @@
   position: absolute;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
   border-radius: 24px;
 }
 
