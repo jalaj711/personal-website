@@ -1,72 +1,62 @@
 "use client";
 
 import styles from "./index.module.css";
-import { Brush, NT } from "src/fonts";
+// import { Brush, NT } from "src/fonts";
 import secondaryBg from "../../../public/images/3.webp";
 import { createRef, useEffect, useRef, useState } from "react";
 
-const project_data = [
-  {
-    title: "Gastos",
-    description:
-      "some description about project 1.some description about project 1.some description about project 1.some description about project 1.some description about project 1.some description about project 1.",
-  },
-  {
-    title: "Kitchendotcom.in",
-    description:
-      "some description about project 1.some description about project 1.some description about project 1.some description about project 1.some description about project 1.some description about project 1.",
-  },
-  {
-    title: "Vistaar",
-    description:
-      "some description about project 1.some description about project 1.some description about project 1.some description about project 1.some description about project 1.some description about project 1.",
-  },
-  {
-    title: "Todox",
-    description:
-      "some description about project 1.some description about project 1.some description about project 1.some description about project 1.some description about project 1.some description about project 1.",
-  },
-  {
-    title: "Blogit",
-    description:
-      "some description about project 1.some description about project 1.some description about project 1.some description about project 1.some description about project 1.some description about project 1.",
-  },
-];
-
-const CarouselCell = (props: {
-  title: string;
-  description: string;
-  rotation: number;
-  zTranslate: number | string;
-  yTranslate: number | string;
-  showText?: boolean;
-}) => {
+const RotatingImagesGear = (props: { rotation: number; reverse?: boolean }) => {
   return (
     <div
-      className={styles.carousel_cell}
+      className={styles.rotating_images_container}
       style={{
-        transform: `rotateY(${props.rotation}deg) translateZ(${props.zTranslate}) translateY(${props.yTranslate})`,
+        transform: `translateY(${props.reverse ? "-" : ""}50%) rotateZ(${
+          props.rotation
+        }deg)`,
       }}
     >
-      <div className={styles.carousel_cell_wrapper}>
-        <div
-          className={styles.carousel_cell_picture}
-          style={{ backgroundImage: `url(${secondaryBg.src})` }}
-        ></div>
-        <div
-          className={styles.carousel_cell_text}
-          style={{ opacity: props.showText ? 1 : 0 }}
-        >
-          <div
-            className={[Brush.className, styles.carousel_cell_header].join(" ")}
-          >
-            {props.title}
-          </div>
-          <div className={styles.carousel_cell_description}>
-            {props.description}
-          </div>
-        </div>
-      </div>
+      <div
+        className={styles.rotating_images}
+        style={{
+          transform: `rotateZ(0deg) rotateY(30deg) translateY(-110%)`,
+          backgroundImage: `url(${secondaryBg.src})`,
+        }}
+      ></div>
+      <div
+        className={styles.rotating_images}
+        style={{
+          transform: `rotateZ(60deg) rotateY(30deg) translateY(-110%)`,
+          backgroundImage: `url(${secondaryBg.src})`,
+        }}
+      ></div>
+      <div
+        className={styles.rotating_images}
+        style={{
+          transform: `rotateZ(120deg) rotateY(30deg) translateY(-110%)`,
+          backgroundImage: `url(${secondaryBg.src})`,
+        }}
+      ></div>
+      <div
+        className={styles.rotating_images}
+        style={{
+          transform: `rotateZ(180deg) rotateY(30deg) translateY(-110%)`,
+          backgroundImage: `url(${secondaryBg.src})`,
+        }}
+      ></div>
+      <div
+        className={styles.rotating_images}
+        style={{
+          transform: `rotateZ(240deg) rotateY(30deg) translateY(-110%)`,
+          backgroundImage: `url(${secondaryBg.src})`,
+        }}
+      ></div>
+      <div
+        className={styles.rotating_images}
+        style={{
+          transform: `rotateZ(300deg) rotateY(30deg) translateY(-110%)`,
+          backgroundImage: `url(${secondaryBg.src})`,
+        }}
+      ></div>
     </div>
   );
 };
@@ -116,17 +106,39 @@ export default function Section3(props: { ratio: number }) {
         }}
         ref={elemRef}
       >
-        <div className={styles.container} style={{ background: "red" }}></div>
-        <div className={styles.container} style={{ background: "blue" }}></div>
-        <div className={styles.container} style={{ background: "green" }}></div>
-        <div
-          className={styles.container}
-          style={{ background: "yellow" }}
-        ></div>
-        <div
-          className={styles.container}
-          style={{ background: "purple" }}
-        ></div>
+        <div className={styles.container}>
+          <div className={styles.headers}>
+            <h1 className={styles.h1}>Work experience</h1>
+          </div>
+        </div>
+        <div className={styles.container}>
+          <RotatingImagesGear
+            rotation={
+              (ratio > 0 ? (ratio < MAX_RATIO ? ratio : MAX_RATIO) : 0) * 180 +
+              30
+            }
+            reverse
+          />
+          <RotatingImagesGear
+            rotation={
+              (ratio > 0 ? (ratio < MAX_RATIO ? -ratio : -MAX_RATIO) : 0) *
+                180 +
+              30
+            }
+          />
+          <RotatingImagesGear
+            rotation={
+              (ratio > 0 ? (ratio < MAX_RATIO ? ratio : MAX_RATIO) : 0) * 180 
+            }
+            reverse
+          />
+          <RotatingImagesGear
+            rotation={
+              (ratio > 0 ? (ratio < MAX_RATIO ? -ratio : -MAX_RATIO) : 0) *
+                180 
+            }
+          />
+        </div>
       </div>
     </section>
   );

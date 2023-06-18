@@ -2,11 +2,12 @@ import styles from "./index.module.css";
 import img from "../../../public/images/landing_bg.webp";
 import img_layer_2 from "../../../public/images/landing_bg_layer_2.webp";
 import img_layer_3 from "../../../public/images/landing_bg_layer_3.webp";
+import { MillionDreams, NT } from "src/fonts";
 
 export default function Landing() {
   return (
     <section className={styles.section}>
-      <div className={styles.image_container}>
+      <div className={[styles.image_container, MillionDreams.className].join(' ')}>
         <div
           className={styles.heading_image}
           style={{ backgroundImage: `url(${img.src})`, zIndex: 1 }}
@@ -27,7 +28,7 @@ export default function Landing() {
         </div>
         <div
           className={styles.heading_title}
-          style={{ top: '2%', left: '63%', zIndex: 5 }}
+          style={{ top: '0%', left: '63%', zIndex: 5 }}
         >
           A
         </div>
@@ -50,6 +51,7 @@ export default function Landing() {
           J
         </div>
       </div>
+      <h1 className={NT.className}>Full Stack Developer | UI/UX Designer | C++ programmer</h1>
     </section>
   );
 }

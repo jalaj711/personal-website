@@ -15,14 +15,7 @@ export default function Home() {
   console.log(ratio);
 
   useEffect(() => {
-    "ontouchstart" in window ||
-    navigator.maxTouchPoints > 0 ||
-    //@ts-ignore
-    navigator.msMaxTouchPoints > 0
-      ? window.addEventListener("touchmove", () => {
-          setRatio(window.scrollY / window.innerHeight);
-        })
-      : window.addEventListener("scroll", () => {
+    window.addEventListener("scroll", () => {
           setRatio(window.scrollY / window.innerHeight);
         });
   }, []);
