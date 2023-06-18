@@ -4,6 +4,7 @@ import styles from "./index.module.css";
 // import { Brush, NT } from "src/fonts";
 import secondaryBg from "../../../public/images/3.webp";
 import { createRef, useEffect, useRef, useState } from "react";
+import { Brush } from "src/fonts";
 
 const RotatingImagesGear = (props: { rotation: number; reverse?: boolean }) => {
   return (
@@ -119,6 +120,44 @@ export default function Section3(props: { ratio: number }) {
             }
             reverse
           />
+          <div
+            className={styles.info_container}
+            style={{
+              top: "-20vh",
+            }}
+          >
+            <h2 className={[styles.h2, Brush.className].join(" ")}>
+              Full Stack Developer & SysAdmin
+            </h2>
+            <h3 className={styles.h3}>SHN Advertising</h3>
+            <div className={styles.text}>
+              Some description about this particular experience. Some
+              description about this particular experience. Some description
+              about this particular experience. Some description about this
+              particular experience. Some description about this particular
+              experience.
+            </div>
+          </div>
+        </div>
+        <div className={styles.container}>
+          <div
+            className={styles.info_container}
+            style={{
+              bottom: "-20vh",
+            }}
+          >
+            <h2 className={[styles.h2, Brush.className].join(" ")}>
+              Full Stack Developer & SysAdmin
+            </h2>
+            <h3 className={styles.h3}>SHN Advertising</h3>
+            <div className={styles.text}>
+              Some description about this particular experience. Some
+              description about this particular experience. Some description
+              about this particular experience. Some description about this
+              particular experience. Some description about this particular
+              experience.
+            </div>
+          </div>
           <RotatingImagesGear
             rotation={
               (ratio > 0 ? (ratio < MAX_RATIO ? -ratio : -MAX_RATIO) : 0) *
@@ -126,16 +165,55 @@ export default function Section3(props: { ratio: number }) {
               30
             }
           />
+        </div>
+        <div className={styles.container}>
           <RotatingImagesGear
             rotation={
-              (ratio > 0 ? (ratio < MAX_RATIO ? ratio : MAX_RATIO) : 0) * 180 
+              (ratio > 0 ? (ratio < MAX_RATIO ? ratio : MAX_RATIO) : 0) * 180
             }
             reverse
           />
+          <div
+            className={styles.info_container}
+            style={{
+              top: "-20vh",
+            }}
+          >
+            <h2 className={[styles.h2, Brush.className].join(" ")}>
+              Full Stack Developer & SysAdmin
+            </h2>
+            <h3 className={styles.h3}>SHN Advertising</h3>
+            <div className={styles.text}>
+              Some description about this particular experience. Some
+              description about this particular experience. Some description
+              about this particular experience. Some description about this
+              particular experience. Some description about this particular
+              experience.
+            </div>
+          </div>
+        </div>
+        <div className={styles.container}>
+          <div
+            className={styles.info_container}
+            style={{
+              bottom: "-20vh",
+            }}
+          >
+            <h2 className={[styles.h2, Brush.className].join(" ")}>
+              Full Stack Developer & SysAdmin
+            </h2>
+            <h3 className={styles.h3}>SHN Advertising</h3>
+            <div className={styles.text}>
+              Some description about this particular experience. Some
+              description about this particular experience. Some description
+              about this particular experience. Some description about this
+              particular experience. Some description about this particular
+              experience.
+            </div>
+          </div>
           <RotatingImagesGear
             rotation={
-              (ratio > 0 ? (ratio < MAX_RATIO ? -ratio : -MAX_RATIO) : 0) *
-                180 
+              (ratio > 0 ? (ratio < MAX_RATIO ? -ratio : -MAX_RATIO) : 0) * 180
             }
           />
         </div>

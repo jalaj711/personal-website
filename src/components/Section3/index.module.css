@@ -54,7 +54,7 @@
 .container {
   height: 100vh;
   display: flex;
-  /* flex-direction: column; */
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
@@ -80,6 +80,32 @@
   border-radius: 24px;
 }
 
-.rotating_images_container:last-child {
+.container:last-child {
   margin-right: clamp(175px, 19vw, 250px);;
+}
+
+.info_container {
+  width: clamp(400px, 40vw, 700px);
+  max-width: 80vw;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.info_container .h2 {
+  font-size: clamp(40px, 5vw, 56px);
+  margin-top: -24px;
+  font-weight: 100;
+}
+
+.info_container .h3 {
+  font-size: clamp(24px, 3vw, 40px);
+  font-weight: 100;
+}
+
+.info_container .text {
+  font-size: clamp(18px, 1vw, 28px);
 }
