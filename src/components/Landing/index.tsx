@@ -3,11 +3,31 @@ import img from "../../../public/images/landing_bg.webp";
 import img_layer_2 from "../../../public/images/landing_bg_layer_2.webp";
 import img_layer_3 from "../../../public/images/landing_bg_layer_3.webp";
 import { MillionDreams, NT } from "src/fonts";
+import EnteringAnimation from "../EnteringAnimation";
+import { useEffect } from "react";
 
 export default function Landing() {
+  useEffect(() => {
+    setTimeout(() => {
+      document.body.style.overflowY = "auto";
+      var elems = document.getElementsByClassName(styles.being_animated);
+      if (elems) {
+        for (var i = 0; i < elems.length; i++)
+          elems[i].classList.remove(styles.being_animated);
+      }
+    }, 4000);
+  }, []);
+
   return (
     <section className={styles.section}>
-      <div className={[styles.image_container, MillionDreams.className].join(' ')}>
+      <EnteringAnimation />
+      <div
+        className={[
+          styles.image_container,
+          styles.being_animated,
+          MillionDreams.className,
+        ].join(" ")}
+      >
         <div
           className={styles.heading_image}
           style={{ backgroundImage: `url(${img.src})`, zIndex: 1 }}
@@ -20,38 +40,15 @@ export default function Landing() {
           className={styles.heading_image}
           style={{ backgroundImage: `url(${img_layer_3.src})`, zIndex: 20 }}
         />
-        <div
-          className={styles.heading_title}
-          style={{ top: '-8%', left: '17%', zIndex: 0 }}
-        >
-          J
-        </div>
-        <div
-          className={styles.heading_title}
-          style={{ top: '0%', left: '63%', zIndex: 5 }}
-        >
-          A
-        </div>
-        <div
-          className={styles.heading_title}
-          style={{ top: '32%', left: '4%', zIndex: 0 }}
-        >
-          L
-        </div>
-        <div
-          className={styles.heading_title}
-          style={{ top: '45%', left: '66%', zIndex: 15 }}
-        >
-          A
-        </div>
-        <div
-          className={styles.heading_title}
-          style={{ top: '69%', left: '26%', zIndex: 25 }}
-        >
-          J
-        </div>
+        <div className={styles.heading_title}>J</div>
+        <div className={styles.heading_title}>A</div>
+        <div className={styles.heading_title}>L</div>
+        <div className={styles.heading_title}>A</div>
+        <div className={styles.heading_title}>J</div>
       </div>
-      <h1 className={NT.className}>Full Stack Developer | UI/UX Designer | C++ programmer</h1>
+      <h1 className={NT.className}>
+        Full Stack Developer | UI/UX Designer | C++ programmer
+      </h1>
     </section>
   );
 }

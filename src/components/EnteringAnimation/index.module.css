@@ -1,0 +1,54 @@
+.container {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000000;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  animation: fadeout 0.1s 3s forwards linear;
+}
+/* .text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+} */
+
+.text span {
+  opacity: 0;
+  font-size: 10rem;
+  animation: opacity 2s ease-out forwards;
+}
+
+@keyframes fadeout {
+  from {
+    opacity: 1;
+  }
+  99.99% {
+    display: block;
+  }
+  to {
+    opacity: 0;
+    display: none;
+  }
+}
+
+@keyframes opacity {
+  from {
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
