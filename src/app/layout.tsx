@@ -13,7 +13,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={NT.className} style={{backgroundImage: `linear-gradient(#0008, #0008), url(${bg.src})`}}>{children}</body>
+      <body className={NT.className} style={{backgroundImage: `linear-gradient(#000b, #000b), url(${bg.src})`}}>{children}</body>
     </html>
   );
 }

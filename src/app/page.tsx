@@ -1,9 +1,6 @@
 "use client";
 import styles from "./page.module.css";
-import { Brush, NT } from "src/fonts";
-import primaryBg from "../../public/images/2.webp";
-import secondaryBg from "../../public/images/3.webp";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import Section1 from "src/components/Section1";
 import Section2 from "src/components/Section2";
 import Section3 from "src/components/Section3";
@@ -23,8 +20,8 @@ export default function Home() {
     <main className={styles.main}>
       <Landing />
       <Section1 ratio={ratio - 1} />
-      <Section2 ratio={ratio - 5} />
-      <Section3 ratio={ratio - 9} />
+      <Section3 ratio={ratio - 5} />
+      <Section2 ratio={ratio - 9} />
       <Section4 ratio={ratio - 13} />
     </main>
   );

@@ -75,7 +75,7 @@
   position: absolute;
   background-position: center;
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
   border-radius: 24px;
 }
 
@@ -98,6 +98,7 @@
   font-size: clamp(40px, 5vw, 56px);
   margin-top: -24px;
   font-weight: 100;
+  line-height: 1;
 }
 
 .info_container .h3 {

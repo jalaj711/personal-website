@@ -1,11 +1,11 @@
 "use client";
 
 import styles from "./index.module.css";
-// import { Brush, NT } from "src/fonts";
-import secondaryBg from "../../../public/images/3.webp";
+// import { MillionDreams, NT } from "src/fonts";
+import secondaryBg from "../../../public/images/2.webp";
 import bg from "../../../public/images/bg.webp";
 import { createRef, useEffect, useRef, useState } from "react";
-import { Brush, MillionDreams } from "src/fonts";
+import { MillionDreams } from "src/fonts";
 
 const RotatingImagesGear = (props: { rotation: number; reverse?: boolean }) => {
   return (
@@ -105,7 +105,7 @@ export default function Section3(props: { ratio: number }) {
                 : -maxPercentage * 100
               : 0
           }%)`,
-          backgroundImage: `linear-gradient(#0008, #0008), url(${bg.src})`,
+          backgroundImage: `linear-gradient(#000b, #000b), url(${bg.src})`,
         }}
         ref={elemRef}
       >
@@ -117,9 +117,34 @@ export default function Section3(props: { ratio: number }) {
           </div>
         </div>
         <div className={styles.container}>
+          <div
+            className={styles.info_container}
+            style={{
+              bottom: "-20vh",
+            }}
+          >
+            <h2 className={[styles.h2, MillionDreams.className].join(" ")}>
+              Full Stack Developer & SysAdmin
+            </h2>
+            <h3 className={styles.h3}>SHN Advertising</h3>
+            <div className={styles.text}>
+              Some description about this particular experience. Some
+              description about this particular experience. Some description
+              about this particular experience. Some description about this
+              particular experience. Some description about this particular
+              experience.
+            </div>
+          </div>
           <RotatingImagesGear
             rotation={
-              (ratio > 0 ? (ratio < MAX_RATIO ? ratio : MAX_RATIO) : 0) * 30 +
+              (ratio > 0 ? (ratio < MAX_RATIO ? -ratio : -MAX_RATIO) : 0) * 45
+            }
+          />
+        </div>
+        <div className={styles.container}>
+          <RotatingImagesGear
+            rotation={
+              (ratio > 0 ? (ratio < MAX_RATIO ? ratio : MAX_RATIO) : 0) * 45 +
               30
             }
             reverse
@@ -130,7 +155,7 @@ export default function Section3(props: { ratio: number }) {
               top: "-20vh",
             }}
           >
-            <h2 className={[styles.h2, Brush.className].join(" ")}>
+            <h2 className={[styles.h2, MillionDreams.className].join(" ")}>
               Full Stack Developer & SysAdmin
             </h2>
             <h3 className={styles.h3}>SHN Advertising</h3>
@@ -150,7 +175,7 @@ export default function Section3(props: { ratio: number }) {
               bottom: "-20vh",
             }}
           >
-            <h2 className={[styles.h2, Brush.className].join(" ")}>
+            <h2 className={[styles.h2, MillionDreams.className].join(" ")}>
               Full Stack Developer & SysAdmin
             </h2>
             <h3 className={styles.h3}>SHN Advertising</h3>
@@ -164,7 +189,7 @@ export default function Section3(props: { ratio: number }) {
           </div>
           <RotatingImagesGear
             rotation={
-              (ratio > 0 ? (ratio < MAX_RATIO ? -ratio : -MAX_RATIO) : 0) * 30 +
+              (ratio > 0 ? (ratio < MAX_RATIO ? -ratio : -MAX_RATIO) : 0) * 45 +
               30
             }
           />
@@ -172,7 +197,7 @@ export default function Section3(props: { ratio: number }) {
         <div className={styles.container}>
           <RotatingImagesGear
             rotation={
-              (ratio > 0 ? (ratio < MAX_RATIO ? ratio : MAX_RATIO) : 0) * 30
+              (ratio > 0 ? (ratio < MAX_RATIO ? ratio : MAX_RATIO) : 0) * 45
             }
             reverse
           />
@@ -182,7 +207,7 @@ export default function Section3(props: { ratio: number }) {
               top: "-20vh",
             }}
           >
-            <h2 className={[styles.h2, Brush.className].join(" ")}>
+            <h2 className={[styles.h2, MillionDreams.className].join(" ")}>
               Full Stack Developer & SysAdmin
             </h2>
             <h3 className={styles.h3}>SHN Advertising</h3>
@@ -194,31 +219,6 @@ export default function Section3(props: { ratio: number }) {
               experience.
             </div>
           </div>
-        </div>
-        <div className={styles.container}>
-          <div
-            className={styles.info_container}
-            style={{
-              bottom: "-20vh",
-            }}
-          >
-            <h2 className={[styles.h2, Brush.className].join(" ")}>
-              Full Stack Developer & SysAdmin
-            </h2>
-            <h3 className={styles.h3}>SHN Advertising</h3>
-            <div className={styles.text}>
-              Some description about this particular experience. Some
-              description about this particular experience. Some description
-              about this particular experience. Some description about this
-              particular experience. Some description about this particular
-              experience.
-            </div>
-          </div>
-          <RotatingImagesGear
-            rotation={
-              (ratio > 0 ? (ratio < MAX_RATIO ? -ratio : -MAX_RATIO) : 0) * 30
-            }
-          />
         </div>
       </div>
     </section>
