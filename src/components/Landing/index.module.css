@@ -124,7 +124,7 @@
 
 .descriptions {
   display: flex;
-  gap: 2px;
+  gap: 12px;
   width: 100%;
   align-items: center;
   justify-content: space-evenly;
@@ -134,13 +134,17 @@
   font-size: clamp(24px, 3vw, 32px);
 }
 
+.descriptions .primary_description {
+  font-size: clamp(32px, 4vw, 48px);
+}
+
 .descriptions span {
   opacity: 0;
   animation: fadein 1s ease-out forwards;
 }
 
-.descriptions span:nth-child(1) { animation-delay: 8s ; }
-.descriptions span:nth-child(2) { animation-delay: 8.6s ; }
+.descriptions span:nth-child(1) { animation-delay: 8.6s ; }
+.descriptions span:nth-child(2) { animation-delay: 8s ; }
 .descriptions span:nth-child(3) { animation-delay: 9.2s; }
 
 
@@ -183,5 +187,8 @@
   }
   .heading_title {
     font-size: 7rem;
+  }
+  .descriptions {
+    flex-direction: column;
   }
 }

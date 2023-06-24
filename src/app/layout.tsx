@@ -1,5 +1,5 @@
 import "./globals.css";
-import { NT } from "src/fonts";
+import { Raleway } from "src/fonts";
 import bg from "../../public/images/bg.webp"
 export const metadata = {
   title: "Create Next App",
@@ -13,7 +13,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={NT.className} style={{backgroundImage: `linear-gradient(#000b, #000b), url(${bg.src})`}}>{children}</body>
+      <body className={Raleway.className} style={{backgroundImage: `linear-gradient(#000b, #000b), url(${bg.src})`}}>{children}</body>
     </html>
   );
 }

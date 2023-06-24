@@ -103,9 +103,10 @@
 
 .info_container .h3 {
   font-size: clamp(24px, 3vw, 40px);
-  font-weight: 100;
+  font-weight: 300;
 }
 
 .info_container .text {
   font-size: clamp(18px, 1vw, 28px);
+  font-weight: 200;
 }
