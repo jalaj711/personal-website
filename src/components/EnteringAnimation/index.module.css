@@ -10,7 +10,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  animation: fadeout 0.1s 3s forwards linear;
+  animation: fadeout 0.1s 4s forwards linear;
 }
 /* .text {
     display: flex;

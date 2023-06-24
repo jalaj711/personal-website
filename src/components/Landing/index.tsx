@@ -15,7 +15,7 @@ export default function Landing() {
         for (var i = 0; i < elems.length; i++)
           elems[i].classList.remove(styles.being_animated);
       }
-    }, 4000);
+    }, 5000);
   }, []);
 
   return (
