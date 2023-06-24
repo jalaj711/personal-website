@@ -1,7 +1,7 @@
 .section {
   width: 100vw;
   height: 100vh;
-  color: white;
+  color: #cdc6be;
   display: flex;
   flex-direction: column;
   align-items: center;

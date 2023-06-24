@@ -1,75 +1,11 @@
 "use client";
 
 import styles from "./index.module.css";
-import { Brush, NT } from "src/fonts";
+import { Brush, MillionDreams, NT } from "src/fonts";
+import bg from "../../../public/images/bg.webp";
 import secondaryBg from "../../../public/images/3.webp";
 import { createRef, useEffect, useRef, useState } from "react";
 
-const project_data = [
-  {
-    title: "Gastos",
-    description:
-      "some description about project 1.some description about project 1.some description about project 1.some description about project 1.some description about project 1.some description about project 1.",
-  },
-  {
-    title: "Kitchendotcom.in",
-    description:
-      "some description about project 1.some description about project 1.some description about project 1.some description about project 1.some description about project 1.some description about project 1.",
-  },
-  {
-    title: "Vistaar",
-    description:
-      "some description about project 1.some description about project 1.some description about project 1.some description about project 1.some description about project 1.some description about project 1.",
-  },
-  {
-    title: "Todox",
-    description:
-      "some description about project 1.some description about project 1.some description about project 1.some description about project 1.some description about project 1.some description about project 1.",
-  },
-  {
-    title: "Blogit",
-    description:
-      "some description about project 1.some description about project 1.some description about project 1.some description about project 1.some description about project 1.some description about project 1.",
-  },
-];
-
-const CarouselCell = (props: {
-  title: string;
-  description: string;
-  rotation: number;
-  zTranslate: number | string;
-  yTranslate: number | string;
-  showText?: boolean;
-}) => {
-  return (
-    <div
-      className={styles.carousel_cell}
-      style={{
-        transform: `rotateY(${props.rotation}deg) translateZ(${props.zTranslate}) translateY(${props.yTranslate})`,
-      }}
-    >
-      <div className={styles.carousel_cell_wrapper}>
-        <div
-          className={styles.carousel_cell_picture}
-          style={{ backgroundImage: `url(${secondaryBg.src})` }}
-        ></div>
-        <div
-          className={styles.carousel_cell_text}
-          style={{ opacity: props.showText ? 1 : 0 }}
-        >
-          <div
-            className={[Brush.className, styles.carousel_cell_header].join(" ")}
-          >
-            {props.title}
-          </div>
-          <div className={styles.carousel_cell_description}>
-            {props.description}
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-};
 
 export default function Section4(props: { ratio: number }) {
   const { ratio } = props;
@@ -108,20 +44,17 @@ export default function Section4(props: { ratio: number }) {
                 : 0
               : -maxPercentage*100
           }%)`,
+          backgroundImage: `linear-gradient(#000b, #000b), url(${bg.src})`,
         }}
         ref={elemRef}
       >
-        <div className={styles.container} style={{ background: "red" }}></div>
-        <div className={styles.container} style={{ background: "blue" }}></div>
-        <div className={styles.container} style={{ background: "green" }}></div>
-        <div
-          className={styles.container}
-          style={{ background: "yellow" }}
-        ></div>
-        <div
-          className={styles.container}
-          style={{ background: "purple" }}
-        ></div>
+        <div className={styles.container}>
+          <div className={styles.headers}>
+            <h1 className={[styles.h1, MillionDreams.className].join(" ")}>
+              Let&apos;s connect
+            </h1>
+          </div>
+        </div>
       </div>
     </section>
   );

@@ -14,7 +14,7 @@
 .section {
   width: 100vw;
   height: 400vh;
-  color: white;
+  color: #cdc6be;
   position: relative;
 }
 
@@ -80,7 +80,19 @@
 }
 
 .container:last-child {
-  margin-right: clamp(175px, 19vw, 250px);;
+  margin-right: clamp(175px, 19vw, 250px);
+}
+
+@media (max-width: 400px) {
+  .container:last-child {
+    margin-right: -150px !important;
+  }
+}
+
+@media (max-width: 768px) and (min-width: 400px) {
+  .container:last-child {
+    margin-right: 0px;
+  }
 }
 
 .info_container {
