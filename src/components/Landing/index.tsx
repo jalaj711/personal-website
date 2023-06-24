@@ -46,8 +46,10 @@ export default function Landing() {
         <div className={styles.heading_title}>A</div>
         <div className={styles.heading_title}>J</div>
       </div>
-      <h1 className={NT.className}>
-        Full Stack Developer | UI/UX Designer | C++ programmer
+      <h1 className={[NT.className, styles.descriptions].join(" ")}>
+        <span>Full Stack Developer</span>
+        <span>UI/UX Designer </span>
+        <span>C++ programmer</span> 
       </h1>
     </section>
   );
