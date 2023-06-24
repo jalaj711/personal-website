@@ -58,6 +58,23 @@
   justify-content: center;
 }
 
+
+.container:first-child {
+  margin-left: clamp(175px, 19vw, 250px);
+}
+
+@media (max-width: 400px) {
+  .container:first-child {
+    margin-left: -150px !important;
+  }
+}
+
+@media (max-width: 768px) and (min-width: 400px) {
+  .container:first-child {
+    margin-left: 0px;
+  }
+}
+
 .rotating_images_container {
   position: relative;
   transform-style: preserve-3d;

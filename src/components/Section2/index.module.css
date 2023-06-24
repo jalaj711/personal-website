@@ -17,7 +17,9 @@
   margin: 0;
   text-align: center;
   line-height: 1;
-  font-size: clamp(88px, 20vw, 250px);
+  font-size: clamp(108px, 15vw, 184px);
+  max-width: 90%;
+  word-wrap: break-word;
 }
 
 .section {

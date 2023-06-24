@@ -112,7 +112,7 @@ export default function Section3(props: { ratio: number }) {
         <div className={styles.container}>
           <div className={styles.headers}>
             <h1 className={[styles.h1, MillionDreams.className].join(" ")}>
-              Work experience
+              Projects
             </h1>
           </div>
         </div>

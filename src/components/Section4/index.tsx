@@ -6,6 +6,61 @@ import bg from "../../../public/images/bg.webp";
 import secondaryBg from "../../../public/images/3.webp";
 import { createRef, useEffect, useRef, useState } from "react";
 
+const RotatingImagesGear = (props: { rotation: number; reverse?: boolean }) => {
+  return (
+    <div
+      className={styles.rotating_images_container}
+      style={{
+        transform: `translateY(${props.reverse ? "-" : ""}50%) rotateZ(${
+          props.rotation
+        }deg)`,
+      }}
+    >
+      <div
+        className={styles.rotating_images}
+        style={{
+          transform: `rotateZ(0deg) rotateY(30deg) translateY(-110%)`,
+          backgroundImage: `url(${secondaryBg.src})`,
+        }}
+      ></div>
+      <div
+        className={styles.rotating_images}
+        style={{
+          transform: `rotateZ(60deg) rotateY(30deg) translateY(-110%)`,
+          backgroundImage: `url(${secondaryBg.src})`,
+        }}
+      ></div>
+      <div
+        className={styles.rotating_images}
+        style={{
+          transform: `rotateZ(120deg) rotateY(30deg) translateY(-110%)`,
+          backgroundImage: `url(${secondaryBg.src})`,
+        }}
+      ></div>
+      <div
+        className={styles.rotating_images}
+        style={{
+          transform: `rotateZ(180deg) rotateY(30deg) translateY(-110%)`,
+          backgroundImage: `url(${secondaryBg.src})`,
+        }}
+      ></div>
+      <div
+        className={styles.rotating_images}
+        style={{
+          transform: `rotateZ(240deg) rotateY(30deg) translateY(-110%)`,
+          backgroundImage: `url(${secondaryBg.src})`,
+        }}
+      ></div>
+      <div
+        className={styles.rotating_images}
+        style={{
+          transform: `rotateZ(300deg) rotateY(30deg) translateY(-110%)`,
+          backgroundImage: `url(${secondaryBg.src})`,
+        }}
+      ></div>
+    </div>
+  );
+};
 
 export default function Section4(props: { ratio: number }) {
   const { ratio } = props;
@@ -40,7 +95,7 @@ export default function Section4(props: { ratio: number }) {
           transform: `translateX(${
             ratio > 0
               ? ratio < (MAX_RATIO)
-                ? (1 - ratio / (MAX_RATIO)) * -maxPercentage * 100
+                ? (1 - ratio / MAX_RATIO) * -maxPercentage * 100
                 : 0
               : -maxPercentage*100
           }%)`,
@@ -49,9 +104,111 @@ export default function Section4(props: { ratio: number }) {
         ref={elemRef}
       >
         <div className={styles.container}>
+          <RotatingImagesGear
+            rotation={
+              (ratio > 0 ? (ratio < MAX_RATIO ? ratio : MAX_RATIO) : 0) * 45
+            }
+            reverse
+          />
+          <div
+            className={styles.info_container}
+            style={{
+              top: "-20vh",
+            }}
+          >
+            <h2 className={[styles.h2, MillionDreams.className].join(" ")}>
+              Full Stack Developer & SysAdmin
+            </h2>
+            <h3 className={styles.h3}>SHN Advertising</h3>
+            <div className={styles.text}>
+              Some description about this particular experience. Some
+              description about this particular experience. Some description
+              about this particular experience. Some description about this
+              particular experience. Some description about this particular
+              experience.
+            </div>
+          </div>
+        </div>
+        <div className={styles.container}>
+          <div
+            className={styles.info_container}
+            style={{
+              bottom: "-20vh",
+            }}
+          >
+            <h2 className={[styles.h2, MillionDreams.className].join(" ")}>
+              Full Stack Developer & SysAdmin
+            </h2>
+            <h3 className={styles.h3}>SHN Advertising</h3>
+            <div className={styles.text}>
+              Some description about this particular experience. Some
+              description about this particular experience. Some description
+              about this particular experience. Some description about this
+              particular experience. Some description about this particular
+              experience.
+            </div>
+          </div>
+          <RotatingImagesGear
+            rotation={
+              (ratio > 0 ? (ratio < MAX_RATIO ? -ratio : -MAX_RATIO) : 0) * 45
+            }
+          />
+        </div>
+        <div className={styles.container}>
+          <RotatingImagesGear
+            rotation={
+              (ratio > 0 ? (ratio < MAX_RATIO ? ratio : MAX_RATIO) : 0) * 45
+            }
+            reverse
+          />
+          <div
+            className={styles.info_container}
+            style={{
+              top: "-20vh",
+            }}
+          >
+            <h2 className={[styles.h2, MillionDreams.className].join(" ")}>
+              Full Stack Developer & SysAdmin
+            </h2>
+            <h3 className={styles.h3}>SHN Advertising</h3>
+            <div className={styles.text}>
+              Some description about this particular experience. Some
+              description about this particular experience. Some description
+              about this particular experience. Some description about this
+              particular experience. Some description about this particular
+              experience.
+            </div>
+          </div>
+        </div>
+        <div className={styles.container}>
+          <div
+            className={styles.info_container}
+            style={{
+              bottom: "-20vh",
+            }}
+          >
+            <h2 className={[styles.h2, MillionDreams.className].join(" ")}>
+              Full Stack Developer & SysAdmin
+            </h2>
+            <h3 className={styles.h3}>SHN Advertising</h3>
+            <div className={styles.text}>
+              Some description about this particular experience. Some
+              description about this particular experience. Some description
+              about this particular experience. Some description about this
+              particular experience. Some description about this particular
+              experience.
+            </div>
+          </div>
+          <RotatingImagesGear
+            rotation={
+              (ratio > 0 ? (ratio < MAX_RATIO ? -ratio : -MAX_RATIO) : 0) * 45
+            }
+          />
+        </div>
+        <div className={styles.container}>
           <div className={styles.headers}>
             <h1 className={[styles.h1, MillionDreams.className].join(" ")}>
-              Let&apos;s connect
+              What others have to say about me
             </h1>
           </div>
         </div>

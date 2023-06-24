@@ -7,27 +7,27 @@ import { useEffect, useRef, useState } from "react";
 
 const project_data = [
   {
-    title: "Gastos",
+    title: "Software Developer",
     description:
       "some description about project 1.some description about project 1.some description about project 1.some description about project 1.some description about project 1.some description about project 1.",
   },
   {
-    title: "Kitchendotcom.in",
+    title: "Web Developer",
     description:
       "some description about project 1.some description about project 1.some description about project 1.some description about project 1.some description about project 1.some description about project 1.",
   },
   {
-    title: "Vistaar",
+    title: "Backend Engineer",
     description:
       "some description about project 1.some description about project 1.some description about project 1.some description about project 1.some description about project 1.some description about project 1.",
   },
   {
-    title: "Todox",
+    title: "Full Stack Intern",
     description:
       "some description about project 1.some description about project 1.some description about project 1.some description about project 1.some description about project 1.some description about project 1.",
   },
   {
-    title: "Blogit",
+    title: "Content Writer",
     description:
       "some description about project 1.some description about project 1.some description about project 1.some description about project 1.some description about project 1.some description about project 1.",
   },
@@ -121,15 +121,17 @@ export default function Section2(props: { ratio: number }) {
         <div className={styles.carousel_scene}>
           <div className={styles.headers}>
             <h1
-              className={[styles.h1, MillionDreams.className, styles.primary_header].join(
-                " "
-              )}
+              className={[
+                styles.h1,
+                MillionDreams.className,
+                styles.primary_header,
+              ].join(" ")}
               style={{
                 transform: `translateZ(-${zTranslate})`,
-                opacity: ratio > 0 ? 0.6 : 1,
+                opacity: ratio > 0 ? (ratio < MAX_RATIO+0.2 ? 0.2 : 1) : 1,
               }}
             >
-              Projects
+              Work Experiences
             </h1>
           </div>
           <div
