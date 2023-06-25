@@ -6,6 +6,19 @@ import secondaryBg from "../../../public/images/2.webp";
 import bg from "../../../public/images/bg.webp";
 import { createRef, useEffect, useRef, useState } from "react";
 import { MillionDreams } from "src/fonts";
+import Chip, {
+  ChipGroup,
+  DRFChip,
+  DjangoChip,
+  FigmaChip,
+  FlaskChip,
+  JSChip,
+  MySqlChip,
+  PostgresChip,
+  ReactChip,
+  ReduxChip,
+  TSChip,
+} from "../Chip";
 
 const RotatingImagesGear = (props: { rotation: number; reverse?: boolean }) => {
   return (
@@ -117,6 +130,37 @@ export default function ProjectsSection(props: { ratio: number }) {
           </div>
         </div>
         <div className={styles.container}>
+          <RotatingImagesGear
+            rotation={
+              (ratio > 0 ? (ratio < MAX_RATIO ? ratio : MAX_RATIO) : 0) * 45
+            }
+            reverse
+          />
+          <div
+            className={styles.info_container}
+            style={{
+              top: "-20vh",
+            }}
+          >
+            <h2 className={[styles.h2, MillionDreams.className].join(" ")}>
+              Blogit
+            </h2>
+            <ChipGroup>
+              <FlaskChip />
+              <ReactChip />
+              <TSChip />
+              <MySqlChip />
+            </ChipGroup>
+            <div className={styles.text}>
+              Some description about this particular experience. Some
+              description about this particular experience. Some description
+              about this particular experience. Some description about this
+              particular experience. Some description about this particular
+              experience.
+            </div>
+          </div>
+        </div>
+        <div className={styles.container}>
           <div
             className={styles.info_container}
             style={{
@@ -124,9 +168,16 @@ export default function ProjectsSection(props: { ratio: number }) {
             }}
           >
             <h2 className={[styles.h2, MillionDreams.className].join(" ")}>
-              Full Stack Developer & SysAdmin
+              Jewellery Billing
             </h2>
-            <h3 className={styles.h3}>SHN Advertising</h3>
+            <ChipGroup>
+              <DjangoChip />
+              <ReactChip />
+              <ReduxChip />
+              <DRFChip />
+              <TSChip />
+              <PostgresChip />
+            </ChipGroup>
             <div className={styles.text}>
               Some description about this particular experience. Some
               description about this particular experience. Some description
@@ -156,9 +207,15 @@ export default function ProjectsSection(props: { ratio: number }) {
             }}
           >
             <h2 className={[styles.h2, MillionDreams.className].join(" ")}>
-              Full Stack Developer & SysAdmin
+              Kictehndotcom
             </h2>
-            <h3 className={styles.h3}>SHN Advertising</h3>
+            <ChipGroup>
+              <DjangoChip />
+              <ReactChip />
+              <DRFChip />
+              <JSChip />
+              <FigmaChip />
+            </ChipGroup>
             <div className={styles.text}>
               Some description about this particular experience. Some
               description about this particular experience. Some description
@@ -176,9 +233,15 @@ export default function ProjectsSection(props: { ratio: number }) {
             }}
           >
             <h2 className={[styles.h2, MillionDreams.className].join(" ")}>
-              Full Stack Developer & SysAdmin
+              Vistaar
             </h2>
-            <h3 className={styles.h3}>SHN Advertising</h3>
+            <ChipGroup>
+              <Chip color={{r: 255, g: 100, b: 100}}>HTML5</Chip>
+              <JSChip />
+              <Chip color={{r: 100, g: 100, b: 255}}>css3</Chip>
+              <Chip>Locomotive</Chip>
+              <Chip>Scroll Effects</Chip>
+            </ChipGroup>
             <div className={styles.text}>
               Some description about this particular experience. Some
               description about this particular experience. Some description
@@ -208,9 +271,16 @@ export default function ProjectsSection(props: { ratio: number }) {
             }}
           >
             <h2 className={[styles.h2, MillionDreams.className].join(" ")}>
-              Full Stack Developer & SysAdmin
+              Gastos
             </h2>
-            <h3 className={styles.h3}>SHN Advertising</h3>
+            <ChipGroup>
+              <DjangoChip />
+              <ReactChip />
+              <ReduxChip />
+              <DRFChip />
+              <TSChip />
+              <PostgresChip />
+            </ChipGroup>
             <div className={styles.text}>
               Some description about this particular experience. Some
               description about this particular experience. Some description
