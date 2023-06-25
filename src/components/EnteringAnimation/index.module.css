@@ -29,12 +29,8 @@
   from {
     opacity: 1;
   }
-  99.99% {
-    display: block;
-  }
   to {
     opacity: 0;
-    display: none;
   }
 }
 
