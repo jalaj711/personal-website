@@ -7,6 +7,7 @@ import ProjectsSection from "src/components/ProjectsSection";
 import ReferencesSection from "src/components/ReferencesSection";
 import Landing from "src/components/Landing";
 import ConnectSection from "src/components/ConnectSection";
+import AboutSection from "src/components/AboutSection";
 
 export default function Home() {
   const [ratio, setRatio] = useState(0);
@@ -24,6 +25,7 @@ export default function Home() {
       <ProjectsSection ratio={ratio - 5} />
       <WorkExperiencesSection ratio={ratio - 9} />
       <ReferencesSection ratio={ratio - 13} />
+      {/* <AboutSection ratio={ratio-17} /> */}
       <ConnectSection ratio={ratio - 17} />
     </main>
   );
