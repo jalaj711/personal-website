@@ -1,12 +1,12 @@
 "use client";
 
 import styles from "./index.module.css";
-import { Brush, MillionDreams, NT } from "src/fonts";
-import bg from "../../../public/images/bg.webp";
-import secondaryBg from "../../../public/images/3.webp";
-import { createRef, useEffect, useRef, useState } from "react";
+import { MillionDreams } from "src/fonts";
+// import bg from "../../../public/images/bg.webp";
+// import secondaryBg from "../../../public/images/3.webp";
+import { createRef } from "react";
 
-export default function Section5(props: { ratio: number }) {
+export default function ConnectSection(props: { ratio: number }) {
   const { ratio } = props;
   const MAX_RATIO = 3;
   const elemRef = createRef<HTMLDivElement>();

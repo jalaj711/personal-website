@@ -5,7 +5,7 @@ import primaryBg from "../../../public/images/2.webp";
 import secondaryBg from "../../../public/images/3.webp";
 import { useEffect, useRef, useState } from "react";
 
-export default function Section1(props: { ratio: number }) {
+export default function AppsSection(props: { ratio: number }) {
   const secondaryTextRef = useRef<HTMLHeadingElement | null>(null);
   const prevValue = useRef<number>(0);
   const MAX_RATIO = 3;
@@ -60,7 +60,7 @@ export default function Section1(props: { ratio: number }) {
               styles.primary_header,
             ].join(" ")}
           >
-            and i make apps that are
+            i make apps that are
           </h1>
           <h1
             className={[styles.h1, NT.className, styles.secondary_header].join(

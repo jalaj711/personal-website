@@ -62,7 +62,7 @@ const RotatingImagesGear = (props: { rotation: number; reverse?: boolean }) => {
   );
 };
 
-export default function Section4(props: { ratio: number }) {
+export default function ReferencesSection(props: { ratio: number }) {
   const { ratio } = props;
   const MAX_RATIO = 3;
   const elemRef = createRef<HTMLDivElement>()

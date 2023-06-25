@@ -71,7 +71,7 @@ const CarouselCell = (props: {
   );
 };
 
-export default function Section2(props: { ratio: number }) {
+export default function WorkExperiencesSection(props: { ratio: number }) {
   const MAX_RATIO = 2;
   const [zTranslate, setZTranslate] = useState("");
   const [angleMultFactor, setAngleMultFactor] = useState(0);
