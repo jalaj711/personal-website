@@ -76,6 +76,7 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  filter: brightness(0.8);
   border-radius: 24px;
 }
 

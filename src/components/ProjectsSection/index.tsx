@@ -2,7 +2,17 @@
 
 import styles from "./index.module.css";
 // import { MillionDreams, NT } from "src/fonts";
-import secondaryBg from "../../../public/images/2.webp";
+import vistaar_1 from "../../../public/images/projects/vistaar_1.webp";
+import vistaar_3 from "../../../public/images/projects/vistaar_3.webp";
+import vistaar_5 from "../../../public/images/projects/vistaar_5.webp";
+import gs1 from "../../../public/images/projects/gs1.webp";
+import gs2 from "../../../public/images/projects/gs2.webp";
+import gs3 from "../../../public/images/projects/gs3.webp";
+import jb1 from "../../../public/images/projects/jb1.webp";
+import jb2 from "../../../public/images/projects/jb2.webp";
+import jb3 from "../../../public/images/projects/jb3.webp";
+import kcd1 from "../../../public/images/projects/kcd1.webp";
+import kcd3 from "../../../public/images/projects/kcd3.webp";
 import bg from "../../../public/images/bg.webp";
 import { createRef, useEffect, useRef, useState } from "react";
 import { MillionDreams } from "src/fonts";
@@ -20,7 +30,7 @@ import Chip, {
   TSChip,
 } from "../Chip";
 
-const RotatingImagesGear = (props: { rotation: number; reverse?: boolean }) => {
+const RotatingImagesGear = (props: { rotation: number; reverse?: boolean, images: string[] }) => {
   return (
     <div
       className={styles.rotating_images_container}
@@ -34,42 +44,42 @@ const RotatingImagesGear = (props: { rotation: number; reverse?: boolean }) => {
         className={styles.rotating_images}
         style={{
           transform: `rotateZ(0deg) rotateY(30deg) translateY(-110%)`,
-          backgroundImage: `url(${secondaryBg.src})`,
+          backgroundImage: `url(${props.images[0]})`,
         }}
       ></div>
       <div
         className={styles.rotating_images}
         style={{
           transform: `rotateZ(60deg) rotateY(30deg) translateY(-110%)`,
-          backgroundImage: `url(${secondaryBg.src})`,
+          backgroundImage: `url(${props.images[1 % props.images.length]})`,
         }}
       ></div>
       <div
         className={styles.rotating_images}
         style={{
           transform: `rotateZ(120deg) rotateY(30deg) translateY(-110%)`,
-          backgroundImage: `url(${secondaryBg.src})`,
+          backgroundImage: `url(${props.images[2 % props.images.length]})`,
         }}
       ></div>
       <div
         className={styles.rotating_images}
         style={{
           transform: `rotateZ(180deg) rotateY(30deg) translateY(-110%)`,
-          backgroundImage: `url(${secondaryBg.src})`,
+          backgroundImage: `url(${props.images[3 % props.images.length]})`,
         }}
       ></div>
       <div
         className={styles.rotating_images}
         style={{
           transform: `rotateZ(240deg) rotateY(30deg) translateY(-110%)`,
-          backgroundImage: `url(${secondaryBg.src})`,
+          backgroundImage: `url(${props.images[4 % props.images.length]})`,
         }}
       ></div>
       <div
         className={styles.rotating_images}
         style={{
           transform: `rotateZ(300deg) rotateY(30deg) translateY(-110%)`,
-          backgroundImage: `url(${secondaryBg.src})`,
+          backgroundImage: `url(${props.images[5 % props.images.length]})`,
         }}
       ></div>
     </div>
@@ -135,6 +145,7 @@ export default function ProjectsSection(props: { ratio: number }) {
               (ratio > 0 ? (ratio < MAX_RATIO ? ratio : MAX_RATIO) : 0) * 45
             }
             reverse
+            images={[vistaar_5.src]}
           />
           <div
             className={styles.info_container}
@@ -190,6 +201,7 @@ export default function ProjectsSection(props: { ratio: number }) {
             rotation={
               (ratio > 0 ? (ratio < MAX_RATIO ? -ratio : -MAX_RATIO) : 0) * 45
             }
+            images={[jb1.src, jb2.src, jb3.src]}
           />
         </div>
         <div className={styles.container}>
@@ -199,6 +211,7 @@ export default function ProjectsSection(props: { ratio: number }) {
               30
             }
             reverse
+            images={[kcd1.src, kcd3.src]}
           />
           <div
             className={styles.info_container}
@@ -255,6 +268,7 @@ export default function ProjectsSection(props: { ratio: number }) {
               (ratio > 0 ? (ratio < MAX_RATIO ? -ratio : -MAX_RATIO) : 0) * 45 +
               30
             }
+            images={[vistaar_3.src, vistaar_1.src, vistaar_5.src]}
           />
         </div>
         <div className={styles.container}>
@@ -263,6 +277,7 @@ export default function ProjectsSection(props: { ratio: number }) {
               (ratio > 0 ? (ratio < MAX_RATIO ? ratio : MAX_RATIO) : 0) * 45
             }
             reverse
+            images={[ gs2.src,gs1.src, gs3.src]}
           />
           <div
             className={styles.info_container}
