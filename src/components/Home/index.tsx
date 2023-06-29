@@ -11,8 +11,6 @@ import ConnectSection from "src/components/ConnectSection";
 
 export default function Home() {
   const [ratio, setRatio] = useState(0);
-  console.log(ratio);
-
   useEffect(() => {
     window.addEventListener("scroll", () => {
       setRatio(window.scrollY / window.innerHeight);

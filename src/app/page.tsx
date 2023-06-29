@@ -4,6 +4,7 @@ import Cache from "src/utils/cache";
 import Loader from "../components/Loader";
 // import AboutSection from "src/components/AboutSection";
 
+// Just a sample require manifest for testing purposes
 const _require_manifest = {
   images: [
     {
@@ -75,8 +76,9 @@ export default function Home() {
 
   useEffect(() => {
     const cache = new Cache(_require_manifest);
-    cache.load_all((p, t) => {
+    cache.load_all((p, t, HC) => {
       setLoadTargetQueue((q) => [...q, { p, t }]);
+      if (HC) setHomeComponent((() => HC));
     });
   }, []);
 
@@ -104,8 +106,8 @@ export default function Home() {
     timeoutRef.current = setTimeout(updateLoaded, 20);
   }, [loadTargetQueue]);
 
-  return HomeComponent ? (
-    <HomeComponent />
+  return HomeComponent && loaded === 100 ? (
+    <HomeComponent/>
   ) : (
     <Loader percentage={loaded} text={loadedText} />
   );

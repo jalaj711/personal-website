@@ -1,3 +1,5 @@
+import React from "react";
+
 interface RequireManifest {
   [category: string]: Array<{
     loadfn: () => Promise<any>;
@@ -30,13 +32,21 @@ class Cache implements CacheInterface {
     );
   }
 
-  load_all(onstatusupdate: (percentage: number, text: string) => any) {
+  load_all(onstatusupdate: (percentage: number, text: string, homeComponent?: React.FC) => any) {
     return new Promise((resolve, reject) => {
       Object.keys(this.require_manifest).forEach((category) => {
         this.require_manifest[category].forEach((dependency) => {
           this.promises.push(
             dependency.loadfn().then((return_val) => {
               console.log(return_val)
+              if (category === "home") {
+                this.loaded += dependency.weight;
+                onstatusupdate(
+                  Math.round((this.loaded / this.loading_target) * 100),
+                  "Finished loading " + dependency.name || "",
+                  return_val.default
+                );
+              }
               if (category !== "images") {
                 this.loaded += dependency.weight;
                 onstatusupdate(
