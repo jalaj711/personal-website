@@ -7,7 +7,7 @@ export default function Loader(props: { percentage: number, text: string}) {
         <div className={[styles.wrapper, NT.className].join(' ')}>
             <div className={styles.percentage}>{Math.round(props.percentage)}</div>
             <div className={styles.content}>
-                <h1 className={styles.h1}>Loading...</h1>
+                <h1 className={styles.h1}>Loading</h1>
                 <div className={styles.progress_track}>
                     <div className={styles.progress_bar} style={{width: props.percentage + '%'}}></div>
                     <div className={styles.progress_bar_shadow} style={{width: props.percentage + '%'}}></div>
