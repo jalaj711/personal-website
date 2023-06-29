@@ -8,58 +8,96 @@ import Loader from "../components/Loader";
 const _require_manifest = {
   images: [
     {
+      loadfn: () => import("../../public/images/2.webp"),
+      weight: 40,
+      // name: "image 100",
+    },
+    {
+      loadfn: () => import("../../public/images/3.webp"),
+      weight: 40,
+      // name: "image 100",
+    },
+    {
+      loadfn: () => import("../../public/images/bg.webp"),
+      weight: 40,
+      // name: "image 100",
+    },
+    {
+      loadfn: () => import("../../public/images/landing_bg.webp"),
+      weight: 40,
+      // name: "image 100",
+    },
+    {
+      loadfn: () => import("../../public/images/landing_bg_layer_2.webp"),
+      weight: 40,
+      // name: "image 100",
+    },
+    {
+      loadfn: () => import("../../public/images/landing_bg_layer_3.webp"),
+      weight: 40,
+      // name: "image 100",
+    },
+    {
       loadfn: () => import("../../public/images/projects/gs1.webp"),
       weight: 40,
-      name: "image 100",
-    },
-  ],
-  components: [
-    {
-      loadfn: () => import("../components/AboutSection"),
-      weight: 100,
-      name: "web components 2",
+      // name: "image 100",
     },
     {
-      loadfn: () => import("../components/AppsSection"),
-      weight: 100,
-      name: "web components 3",
+      loadfn: () => import("../../public/images/projects/gs2.webp"),
+      weight: 40,
+      // name: "image 100",
     },
     {
-      loadfn: () => import("../components/Chip"),
-      weight: 10,
-      name: "web components 4",
+      loadfn: () => import("../../public/images/projects/gs3.webp"),
+      weight: 40,
+      // name: "image 100",
     },
     {
-      loadfn: () => import("../components/ConnectSection"),
-      weight: 100,
-      name: "web components 5",
+      loadfn: () => import("../../public/images/projects/jb1.webp"),
+      weight: 40,
+      // name: "image 100",
     },
     {
-      loadfn: () => import("../components/EnteringAnimation"),
-      weight: 100,
-      name: "web components 6",
+      loadfn: () => import("../../public/images/projects/jb2.webp"),
+      weight: 40,
+      // name: "image 100",
     },
     {
-      loadfn: () => import("../components/Landing"),
-      weight: 100,
-      name: "web components 7",
+      loadfn: () => import("../../public/images/projects/jb3.webp"),
+      weight: 40,
+      // name: "image 100",
     },
     {
-      loadfn: () => import("../components/ProjectsSection"),
-      weight: 100,
-      name: "web components 8",
+      loadfn: () => import("../../public/images/projects/kcd1.webp"),
+      weight: 40,
+      // name: "image 100",
     },
     {
-      loadfn: () => import("../components/ConnectSection"),
-      weight: 100,
-      name: "web components 9",
+      loadfn: () => import("../../public/images/projects/kcd3.webp"),
+      weight: 40,
+      // name: "image 100",
+    },
+    {
+      loadfn: () => import("../../public/images/projects/vistaar_1.webp"),
+      weight: 40,
+      // name: "image 100",
+    },
+    {
+      loadfn: () => import("../../public/images/projects/vistaar_3.webp"),
+      weight: 40,
+      // name: "image 100",
+    },
+    {
+      loadfn: () => import("../../public/images/projects/vistaar_5.webp"),
+      weight: 40,
+      // name: "image 100",
     },
   ],
   home: [
     {
       loadfn: () => import("../components/Home"),
       weight: 200,
-      name: "main component",
+      // name: "main component",
     },
   ],
 };

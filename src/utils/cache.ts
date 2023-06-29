@@ -43,7 +43,7 @@ class Cache implements CacheInterface {
                 this.loaded += dependency.weight;
                 onstatusupdate(
                   Math.round((this.loaded / this.loading_target) * 100),
-                  "Finished loading " + dependency.name || "",
+                  "",//"Finished loading " + dependency.name || "",
                   return_val.default
                 );
               }
@@ -51,7 +51,7 @@ class Cache implements CacheInterface {
                 this.loaded += dependency.weight;
                 onstatusupdate(
                   Math.round((this.loaded / this.loading_target) * 100),
-                  "Finished loading " + dependency.name || ""
+                  ""//"Finished loading " + dependency.name || ""
                 );
               } else {
                 this.promises.push(
@@ -59,7 +59,7 @@ class Cache implements CacheInterface {
                     this.loaded += dependency.weight;
                     onstatusupdate(
                       Math.round((this.loaded / this.loading_target) * 100),
-                      "Finished loading " + dependency.name || ""
+                      ""//"Finished loading " + dependency.name || ""
                     );
                   })
                 );
