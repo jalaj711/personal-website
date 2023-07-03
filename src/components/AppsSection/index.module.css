@@ -93,6 +93,7 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  filter: brightness(0.6) grayscale(0.2);
 }
 
 .secondary_1,

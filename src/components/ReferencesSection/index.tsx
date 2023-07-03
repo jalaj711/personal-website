@@ -99,7 +99,7 @@ export default function ReferencesSection(props: { ratio: number }) {
                 : 0
               : -maxPercentage*100
           }%)`,
-          backgroundImage: `linear-gradient(#000b, #000b), url(${bg.src})`,
+          // backgroundImage: `linear-gradient(#000b, #000b), url(${bg.src})`,
         }}
         ref={elemRef}
       >

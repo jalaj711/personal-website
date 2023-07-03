@@ -132,16 +132,16 @@ export default function Home() {
           if (curr == loadTargetQueue[0].p) {
             setLoadedText(loadTargetQueue[0].t);
             setLoadTargetQueue(loadTargetQueue.slice(1));
-            timeoutRef.current = setTimeout(updateLoaded, 20);
+            timeoutRef.current = setTimeout(updateLoaded, 10);
             return curr;
           }
-          timeoutRef.current = setTimeout(updateLoaded, 20);
+          timeoutRef.current = setTimeout(updateLoaded, 10);
           return curr + 1;
         });
       } else {
       }
     };
-    timeoutRef.current = setTimeout(updateLoaded, 20);
+    timeoutRef.current = setTimeout(updateLoaded, 10);
   }, [loadTargetQueue]);
 
   return HomeComponent && loaded === 100 ? (

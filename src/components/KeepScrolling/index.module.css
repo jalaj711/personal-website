@@ -1,0 +1,48 @@
+.wrapper {
+  position: fixed;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  color: #cdc6be;
+  opacity: 0.7;
+  animation: move 1s ease-out infinite alternate;
+  z-index: 1000000000;
+  font-weight: 900;
+  letter-spacing: 1px;
+  transition: all 0.4s 5s;
+}
+
+.wrapper div,
+.wrapper span {
+  opacity: 0;
+  animation: fadeIn 0.4s 10s ease-out forwards;
+}
+
+.wrapper span {
+  /* transform: rotate(90deg) */
+  font-size: large;
+  line-height: 0;
+}
+
+@keyframes move {
+  from {
+    transform: translateX(-50%) translateY(0px);
+  }
+  to {
+    transform: translateX(-50%) translateY(4px);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

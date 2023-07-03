@@ -128,7 +128,7 @@ export default function ProjectsSection(props: { ratio: number }) {
                 : -maxPercentage * 100
               : 0
           }%)`,
-          backgroundImage: `linear-gradient(#000b, #000b), url(${bg.src})`,
+          // backgroundImage: `linear-gradient(#000b, #000b), url(${bg.src})`,
         }}
         ref={elemRef}
       >

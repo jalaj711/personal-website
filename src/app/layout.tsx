@@ -16,7 +16,8 @@ export default function RootLayout({
       <body
         className={Raleway.className}
         style={{
-          backgroundImage: `linear-gradient(#000b, #000b), url(${bg.src})`,
+          // backgroundImage: `linear-gradient(#000b, #000b), url(${bg.src})`,
+          background: '#000'
         }}
       >
         {children}
