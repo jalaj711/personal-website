@@ -29,6 +29,15 @@
   line-height: 0;
 }
 
+@media (max-width: 600px) {
+    .wrapper span {
+        font-size: x-small;
+    }
+  .wrapper {
+    font-size: smaller;
+  }
+}
+
 @keyframes move {
   from {
     transform: translateX(-50%) translateY(0px);
