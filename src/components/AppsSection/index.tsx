@@ -16,28 +16,28 @@ export default function AppsSection(props: { ratio: number }) {
       props.ratio > 0 &&
       props.ratio < MAX_RATIO
     ) {
-      const values = ["appealing", "scalable", "real time", "reliable"];
-      if (props.ratio < 0.3) {
-        prevValue.current = props.ratio;
-        secondaryTextRef.current.innerText = values[0];
-      } else if (props.ratio > 0.7 && props.ratio < 1.3) {
-        prevValue.current = props.ratio;
-        secondaryTextRef.current.innerText = values[1];
-      } else if (props.ratio > 1.7 && props.ratio < 2.3) {
-        prevValue.current = props.ratio;
-        secondaryTextRef.current.innerText = values[2];
-      } else if (props.ratio > 2.7) {
-        prevValue.current = props.ratio;
-        secondaryTextRef.current.innerText = values[3];
-      } else if (Math.abs(props.ratio - prevValue.current) > 0.05) {
-        prevValue.current = props.ratio;
-        var text = "";
-        for (var i = 0; i < Math.round(Math.random() * 8 + 4); i++) {
-          text += "abc def ghi jkl mnop qrst uvwx yz"[
-            Math.round(Math.random() * 32)
-          ];
-        }
-        (secondaryTextRef.current as HTMLDivElement).innerText = text;
+        const values = ["APPEALING", "SCALABLE", "REAL TIME", "RELIABLE"];
+        if (props.ratio < 0.3) {
+          prevValue.current = props.ratio;
+          secondaryTextRef.current.innerText = values[0];
+        } else if (props.ratio > 0.7 && props.ratio < 1.3) {
+          prevValue.current = props.ratio;
+          secondaryTextRef.current.innerText = values[1];
+        } else if (props.ratio > 1.7 && props.ratio < 2.3) {
+          prevValue.current = props.ratio;
+          secondaryTextRef.current.innerText = values[2];
+        } else if (props.ratio > 2.7) {
+          prevValue.current = props.ratio;
+          secondaryTextRef.current.innerText = values[3];
+        } else if (Math.abs(props.ratio - prevValue.current) > 0.05) {
+          prevValue.current = props.ratio;
+          var text = "";
+          for (var i = 0; i < Math.round(Math.random() * 8 + 4); i++) {
+            text += "ABC DEF GHI JKL MNOP QRST UVWX YZ"[
+              Math.round(Math.random() * 32)
+            ];
+          }
+          (secondaryTextRef.current as HTMLDivElement).innerText = text;
       }
     }
   }, [props.ratio]);
@@ -68,7 +68,7 @@ export default function AppsSection(props: { ratio: number }) {
             )}
             ref={secondaryTextRef}
           >
-            appealing
+            APPEALING
           </h1>
         </div>
       </div>
