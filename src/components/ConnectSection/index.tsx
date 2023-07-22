@@ -38,9 +38,11 @@ export default function ConnectSection(props: { ratio: number }) {
             }%)`,
           }}
         >
-          <h1 className={[styles.text, MillionDreams.className].join(" ")}>
-            GitHub
-          </h1>
+          <a href="https://github.com/jalaj711/" target="_blank">
+            <h1 className={[styles.text, MillionDreams.className].join(" ")}>
+              GitHub
+            </h1>
+          </a>
         </div>
         <div
           className={styles.contact_element}
@@ -52,9 +54,14 @@ export default function ConnectSection(props: { ratio: number }) {
             }%)`,
           }}
         >
-          <h1 className={[styles.text, MillionDreams.className].join(" ")}>
-            LinkedIn
-          </h1>
+          <a
+            href="https://www.linkedin.com/in/jalaj-kumar-b29248232/"
+            target="_blank"
+          >
+            <h1 className={[styles.text, MillionDreams.className].join(" ")}>
+              LinkedIn
+            </h1>
+          </a>
         </div>
         <div
           className={styles.contact_element}
@@ -80,23 +87,14 @@ export default function ConnectSection(props: { ratio: number }) {
             }%)`,
           }}
         >
+        <a
+          href="https://www.instagram.com/jalajkumar_/"
+          target="_blank"
+        >
           <h1 className={[styles.text, MillionDreams.className].join(" ")}>
             Instagram
           </h1>
-        </div>
-        <div
-          className={styles.contact_element}
-          style={{
-            transform: `translateX(${
-              ratio > 0 && ratio < MAX_RATIO
-                ? Math.sin((ratio / MAX_RATIO) * 30) * 50
-                : 0
-            }%)`,
-          }}
-        >
-          <h1 className={[styles.text, MillionDreams.className].join(" ")}>
-            Twitter
-          </h1>
+          </a>
         </div>
       </div>
     </section>

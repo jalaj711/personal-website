@@ -13,7 +13,7 @@
 
 .section {
   width: 100vw;
-  height: 400vh;
+  height: 300vh;
   color: #cdc6be;
   position: relative;
 }
@@ -53,12 +53,12 @@
 
 .out_of_view {
   position: absolute;
-  top: 300vh;
+  top: 200vh;
 }
 
 .text_container {
   width: 100vw;
-  height: 200vh;
+  height: 150vh;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
