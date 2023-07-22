@@ -18,11 +18,6 @@ const _require_manifest = {
       // name: "image 100",
     },
     {
-      loadfn: () => import("../../public/images/bg.webp"),
-      weight: 40,
-      // name: "image 100",
-    },
-    {
       loadfn: () => import("../../public/images/landing_bg.webp"),
       weight: 40,
       // name: "image 100",
@@ -89,6 +84,26 @@ const _require_manifest = {
     },
     {
       loadfn: () => import("../../public/images/projects/vistaar_5.webp"),
+      weight: 40,
+      // name: "image 100",
+    },
+    {
+      loadfn: () => import("../../public/images/projects/atd1.webp"),
+      weight: 40,
+      // name: "image 100",
+    },
+    {
+      loadfn: () => import("../../public/images/projects/atd2.webp"),
+      weight: 40,
+      // name: "image 100",
+    },
+    {
+      loadfn: () => import("../../public/images/projects/atd3.webp"),
+      weight: 40,
+      // name: "image 100",
+    },
+    {
+      loadfn: () => import("../../public/images/projects/atd4.webp"),
       weight: 40,
       // name: "image 100",
     },

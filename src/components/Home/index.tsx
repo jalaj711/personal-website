@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import AppsSection from "src/components/AppsSection";
 import WorkExperiencesSection from "src/components/WorkExperiencesSection";
 import ProjectsSection from "src/components/ProjectsSection";
-import ReferencesSection from "src/components/ReferencesSection";
+// import ReferencesSection from "src/components/ReferencesSection";
 import Landing from "src/components/Landing";
 import ConnectSection from "src/components/ConnectSection";
 import KeepScrolling from "../KeepScrolling";
@@ -23,9 +23,9 @@ export default function Home() {
       <AppsSection ratio={ratio - 1} />
       <ProjectsSection ratio={ratio - 5} />
       <WorkExperiencesSection ratio={ratio - 9} />
-      <ReferencesSection ratio={ratio - 13} />
+      {/* <ReferencesSection ratio={ratio - 13} /> */}
       {/* <AboutSection ratio={ratio-17} /> */}
-      <ConnectSection ratio={ratio - 17} />
+      <ConnectSection ratio={ratio - 13} />
       <KeepScrolling scrolled={ratio > 0.1} />
     </main>
   );
