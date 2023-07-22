@@ -148,17 +148,10 @@ export default function ProjectsSection(props: { ratio: number }) {
           </div>
         </div>
         <div className={styles.container}>
-          <RotatingImagesGear
-            rotation={
-              (ratio > 0 ? (ratio < MAX_RATIO ? ratio : MAX_RATIO) : 0) * 45
-            }
-            reverse
-            images={[jb1.src, jb2.src, jb3.src]}
-          />
           <div
             className={styles.info_container}
             style={{
-              top: "-15vh",
+              bottom: "-15vh",
             }}
           >
             <h2 className={[styles.h2, MillionDreams.className].join(" ")}>
@@ -173,11 +166,11 @@ export default function ProjectsSection(props: { ratio: number }) {
               <PostgresChip />
             </ChipGroup>
             <div className={styles.text}>
-              It&apos; a <b>full blown ERP solution</b>{" "}
-              for Jewellery stores. It features customer, supplier and staff
-              management, custom billing solution, multi-user billing and real
-              time price updates. It is highly scalable and is currently in use
-              by multiple stores helping them manage{" "}
+              It&apos; a <b>full blown ERP solution</b> for Jewellery stores. It
+              features customer, supplier and staff management, custom billing
+              solution, multi-user billing and real time price updates. It is
+              highly scalable and is currently in use by multiple stores helping
+              them manage{" "}
               <b>
                 over 3.5k+ customers, 1k+ products and handling INR 30crores+ in
                 sales
@@ -185,46 +178,18 @@ export default function ProjectsSection(props: { ratio: number }) {
               annually.
             </div>
           </div>
+          <RotatingImagesGear
+            rotation={
+              (ratio > 0 ? (ratio < MAX_RATIO ? ratio : MAX_RATIO) : 0) * 45
+            }
+            images={[jb1.src, jb2.src, jb3.src]}
+          />
         </div>
+
         <div className={styles.container}>
-          <div
-            className={styles.info_container}
-            style={{
-              bottom: "-20vh",
-            }}
-          >
-            <h2 className={[styles.h2, MillionDreams.className].join(" ")}>
-              Vistaar
-            </h2>
-            <ChipGroup>
-              <Chip color={{ r: 255, g: 100, b: 100 }}>HTML5</Chip>
-              <JSChip />
-              <Chip color={{ r: 100, g: 100, b: 255 }}>css3</Chip>
-              <Chip>Locomotive</Chip>
-              <Chip>Scroll Effects</Chip>
-            </ChipGroup>
-            <div className={styles.text}>
-              Website for eastern India&apos;s <b>biggest debating festival</b>.
-              It uses locomotive js to power its appealing{" "}
-              <b>scroll animations and a unique horizontal layout</b>. The
-              website is designed to be minimal while being elegant and
-              appealing to be able to cater to the
-              <b> 1.5k+ participants</b> from a dozen different reputed colleges
-              that were expected to participate in the event.
-            </div>
-          </div>
           <RotatingImagesGear
             rotation={
               (ratio > 0 ? (ratio < MAX_RATIO ? -ratio : -MAX_RATIO) : 0) * 45 +
-              30
-            }
-            images={[vistaar_3.src, vistaar_1.src, vistaar_5.src]}
-          />
-        </div>
-        <div className={styles.container}>
-          <RotatingImagesGear
-            rotation={
-              (ratio > 0 ? (ratio < MAX_RATIO ? ratio : MAX_RATIO) : 0) * 45 +
               30
             }
             reverse
@@ -264,6 +229,41 @@ export default function ProjectsSection(props: { ratio: number }) {
             }}
           >
             <h2 className={[styles.h2, MillionDreams.className].join(" ")}>
+              Vistaar
+            </h2>
+            <ChipGroup>
+              <Chip color={{ r: 255, g: 100, b: 100 }}>HTML5</Chip>
+              <JSChip />
+              <Chip color={{ r: 100, g: 100, b: 255 }}>css3</Chip>
+              <Chip>Locomotive</Chip>
+              <Chip>Scroll Effects</Chip>
+            </ChipGroup>
+            <div className={styles.text}>
+              Website for eastern India&apos;s <b>biggest debating festival</b>.
+              It uses locomotive js to power its appealing{" "}
+              <b>scroll animations and a unique horizontal layout</b>. The
+              website is designed to be minimal while being elegant and
+              appealing to be able to cater to the
+              <b> 1.5k+ participants</b> from a dozen different reputed colleges
+              that were expected to participate in the event.
+            </div>
+          </div>
+          <RotatingImagesGear
+            rotation={
+              (ratio > 0 ? (ratio < MAX_RATIO ? -ratio : -MAX_RATIO) : 0) * 45 +
+              30
+            }
+            images={[vistaar_3.src, vistaar_1.src, vistaar_5.src]}
+          />
+        </div>
+        {/* <div className={styles.container}>
+          <div
+            className={styles.info_container}
+            style={{
+              bottom: "-20vh",
+            }}
+          >
+            <h2 className={[styles.h2, MillionDreams.className].join(" ")}>
               Attendance Tracker
             </h2>
             <ChipGroup>
@@ -285,7 +285,7 @@ export default function ProjectsSection(props: { ratio: number }) {
             }
             images={[atd2.src, atd4.src, atd3.src, atd1.src]}
           />
-        </div>
+        </div> */}
         <div className={styles.container}>
           <RotatingImagesGear
             rotation={

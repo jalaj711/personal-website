@@ -9,28 +9,28 @@ const project_data = [
   {
     title: "Software Developer",
     description:
-      "some description about project 1.some description about project 1.some description about project 1.some description about project 1.some description about project 1.some description about project 1.",
+      "Primarily worked on several ERP solutions built on Django and React. Handled the development process for these applications right from design to development to tetsing to deployment to maintainence.",
   },
   {
     title: "Web Developer",
     description:
-      "some description about project 1.some description about project 1.some description about project 1.some description about project 1.some description about project 1.some description about project 1.",
+      "Developed several websites for the society and helped organise various events including the biggest debating festival of entire eastern india. Represented the society in several debating events throughout the nation.",
   },
   {
     title: "Backend Engineer",
     description:
-      "some description about project 1.some description about project 1.some description about project 1.some description about project 1.some description about project 1.some description about project 1.",
+      "Collaborated with the frontend team and other backend developers to come up with an optimal REST API server based on Postgres & ExpressJs for their e-commmerce engine",
   },
   {
     title: "Full Stack Intern",
     description:
-      "some description about project 1.some description about project 1.some description about project 1.some description about project 1.some description about project 1.some description about project 1.",
+      "Worked with other full stack developers to develop a website for their client which included dynamic blogs, a portfolio and a price estimator.",
   },
-  {
-    title: "Content Writer",
-    description:
-      "some description about project 1.some description about project 1.some description about project 1.some description about project 1.some description about project 1.some description about project 1.",
-  },
+  // {
+  //   title: "Technical Content Writer",
+  //   description:
+  //     "some description about project 1.some description about project 1.some description about project 1.some description about project 1.some description about project 1.some description about project 1.",
+  // },
 ];
 
 const CarouselCell = (props: {
@@ -128,7 +128,7 @@ export default function WorkExperiencesSection(props: { ratio: number }) {
               ].join(" ")}
               style={{
                 transform: `translateZ(-${zTranslate})`,
-                opacity: ratio > 0 ? (ratio < MAX_RATIO+0.2 ? 0.2 : 1) : 1,
+                opacity: ratio > 0 ? (ratio < MAX_RATIO + 0.2 ? 0.2 : 1) : 1,
               }}
             >
               Work Experiences
