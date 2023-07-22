@@ -26,7 +26,7 @@ export default function Home() {
       {/* <ReferencesSection ratio={ratio - 13} /> */}
       {/* <AboutSection ratio={ratio-17} /> */}
       <ConnectSection ratio={ratio - 13} />
-      <KeepScrolling scrolled={ratio > 0.1} />
+      <KeepScrolling scrolled={ratio > 0.1} done={ratio >= 14.5} />
     </main>
   );
 }
