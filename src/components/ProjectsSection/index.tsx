@@ -13,6 +13,10 @@ import jb2 from "../../../public/images/projects/jb2.webp";
 import jb3 from "../../../public/images/projects/jb3.webp";
 import kcd1 from "../../../public/images/projects/kcd1.webp";
 import kcd3 from "../../../public/images/projects/kcd3.webp";
+import atd1 from "../../../public/images/projects/atd1.webp";
+import atd2 from "../../../public/images/projects/atd2.webp";
+import atd3 from "../../../public/images/projects/atd3.webp";
+import atd4 from "../../../public/images/projects/atd4.webp";
 import bg from "../../../public/images/bg.webp";
 import { createRef, useEffect, useRef, useState } from "react";
 import { MillionDreams } from "src/fonts";
@@ -30,7 +34,11 @@ import Chip, {
   TSChip,
 } from "../Chip";
 
-const RotatingImagesGear = (props: { rotation: number; reverse?: boolean, images: string[] }) => {
+const RotatingImagesGear = (props: {
+  rotation: number;
+  reverse?: boolean;
+  images: string[];
+}) => {
   return (
     <div
       className={styles.rotating_images_container}
@@ -145,37 +153,12 @@ export default function ProjectsSection(props: { ratio: number }) {
               (ratio > 0 ? (ratio < MAX_RATIO ? ratio : MAX_RATIO) : 0) * 45
             }
             reverse
-            images={[vistaar_5.src]}
+            images={[jb1.src, jb2.src, jb3.src]}
           />
           <div
             className={styles.info_container}
             style={{
-              top: "-20vh",
-            }}
-          >
-            <h2 className={[styles.h2, MillionDreams.className].join(" ")}>
-              Blogit
-            </h2>
-            <ChipGroup>
-              <FlaskChip />
-              <ReactChip />
-              <TSChip />
-              <MySqlChip />
-            </ChipGroup>
-            <div className={styles.text}>
-              Some description about this particular experience. Some
-              description about this particular experience. Some description
-              about this particular experience. Some description about this
-              particular experience. Some description about this particular
-              experience.
-            </div>
-          </div>
-        </div>
-        <div className={styles.container}>
-          <div
-            className={styles.info_container}
-            style={{
-              bottom: "-20vh",
+              top: "-15vh",
             }}
           >
             <h2 className={[styles.h2, MillionDreams.className].join(" ")}>
@@ -190,18 +173,52 @@ export default function ProjectsSection(props: { ratio: number }) {
               <PostgresChip />
             </ChipGroup>
             <div className={styles.text}>
-              Some description about this particular experience. Some
-              description about this particular experience. Some description
-              about this particular experience. Some description about this
-              particular experience. Some description about this particular
-              experience.
+              It&apos; a <b>full blown ERP solution</b>{" "}
+              for Jewellery stores. It features customer, supplier and staff
+              management, custom billing solution, multi-user billing and real
+              time price updates. It is highly scalable and is currently in use
+              by multiple stores helping them manage{" "}
+              <b>
+                over 3.5k+ customers, 1k+ products and handling INR 30crores+ in
+                sales
+              </b>{" "}
+              annually.
+            </div>
+          </div>
+        </div>
+        <div className={styles.container}>
+          <div
+            className={styles.info_container}
+            style={{
+              bottom: "-20vh",
+            }}
+          >
+            <h2 className={[styles.h2, MillionDreams.className].join(" ")}>
+              Vistaar
+            </h2>
+            <ChipGroup>
+              <Chip color={{ r: 255, g: 100, b: 100 }}>HTML5</Chip>
+              <JSChip />
+              <Chip color={{ r: 100, g: 100, b: 255 }}>css3</Chip>
+              <Chip>Locomotive</Chip>
+              <Chip>Scroll Effects</Chip>
+            </ChipGroup>
+            <div className={styles.text}>
+              Website for eastern India&apos;s <b>biggest debating festival</b>.
+              It uses locomotive js to power its appealing{" "}
+              <b>scroll animations and a unique horizontal layout</b>. The
+              website is designed to be minimal while being elegant and
+              appealing to be able to cater to the
+              <b> 1.5k+ participants</b> from a dozen different reputed colleges
+              that were expected to participate in the event.
             </div>
           </div>
           <RotatingImagesGear
             rotation={
-              (ratio > 0 ? (ratio < MAX_RATIO ? -ratio : -MAX_RATIO) : 0) * 45
+              (ratio > 0 ? (ratio < MAX_RATIO ? -ratio : -MAX_RATIO) : 0) * 45 +
+              30
             }
-            images={[jb1.src, jb2.src, jb3.src]}
+            images={[vistaar_3.src, vistaar_1.src, vistaar_5.src]}
           />
         </div>
         <div className={styles.container}>
@@ -230,11 +247,12 @@ export default function ProjectsSection(props: { ratio: number }) {
               <FigmaChip />
             </ChipGroup>
             <div className={styles.text}>
-              Some description about this particular experience. Some
-              description about this particular experience. Some description
-              about this particular experience. Some description about this
-              particular experience. Some description about this particular
-              experience.
+              Full Stack website for the modular kitchen design and development
+              company kitchendotcom. It features{" "}
+              <b>a dynamic portfolio, a blog sub-site and a price estimator</b>{" "}
+              for their company. It comes with <b>firebase powered</b> mobile
+              authentication, helping the company attract hundreds of new
+              customers every month.
             </div>
           </div>
         </div>
@@ -246,29 +264,26 @@ export default function ProjectsSection(props: { ratio: number }) {
             }}
           >
             <h2 className={[styles.h2, MillionDreams.className].join(" ")}>
-              Vistaar
+              Attendance Tracker
             </h2>
             <ChipGroup>
-              <Chip color={{r: 255, g: 100, b: 100}}>HTML5</Chip>
-              <JSChip />
-              <Chip color={{r: 100, g: 100, b: 255}}>css3</Chip>
-              <Chip>Locomotive</Chip>
-              <Chip>Scroll Effects</Chip>
+              <Chip>React Native</Chip>
+              <TSChip />
             </ChipGroup>
             <div className={styles.text}>
-              Some description about this particular experience. Some
-              description about this particular experience. Some description
-              about this particular experience. Some description about this
-              particular experience. Some description about this particular
-              experience.
+              A <b>cross platform mobile application</b> for students to track
+              their attendances in various courses easily. An{" "}
+              <b>easy to use UI</b> allows anyone to use the app and gain
+              helpful insights about their statictics and gain insights like the
+              current status quo and how many classes they need to attend to
+              catch up to their target level.
             </div>
           </div>
           <RotatingImagesGear
             rotation={
-              (ratio > 0 ? (ratio < MAX_RATIO ? -ratio : -MAX_RATIO) : 0) * 45 +
-              30
+              (ratio > 0 ? (ratio < MAX_RATIO ? -ratio : -MAX_RATIO) : 0) * 45
             }
-            images={[vistaar_3.src, vistaar_1.src, vistaar_5.src]}
+            images={[atd2.src, atd4.src, atd3.src, atd1.src]}
           />
         </div>
         <div className={styles.container}>
@@ -277,7 +292,7 @@ export default function ProjectsSection(props: { ratio: number }) {
               (ratio > 0 ? (ratio < MAX_RATIO ? ratio : MAX_RATIO) : 0) * 45
             }
             reverse
-            images={[ gs2.src,gs1.src, gs3.src]}
+            images={[gs2.src, gs1.src, gs3.src]}
           />
           <div
             className={styles.info_container}
@@ -297,11 +312,15 @@ export default function ProjectsSection(props: { ratio: number }) {
               <PostgresChip />
             </ChipGroup>
             <div className={styles.text}>
-              Some description about this particular experience. Some
-              description about this particular experience. Some description
-              about this particular experience. Some description about this
-              particular experience. Some description about this particular
-              experience.
+              Built on Django, React and Typescript, Gastos is a
+              <b> finance-tracking app</b> which helps you keep track of your
+              expenses and incomes. It comes with features like{" "}
+              <b>
+                multi-device support, custom color coded labels, multi wallet
+                tracking
+              </b>{" "}
+              and helps users find exactly where they are overspending by giving
+              them about <b>daily, weekly and monthly insights</b>.
             </div>
           </div>
         </div>
