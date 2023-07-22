@@ -2,7 +2,10 @@
 
 import styles from "./index.module.css";
 import { Brush, MillionDreams, NT } from "src/fonts";
-import secondaryBg from "../../../public/images/3.webp";
+import shn from "../../../public/images/shn.webp";
+import ds from "../../../public/images/ds.webp";
+import ry from "../../../public/images/ry.webp";
+import ra from "../../../public/images/ra.webp";
 import { useEffect, useRef, useState } from "react";
 
 const project_data = [
@@ -10,21 +13,25 @@ const project_data = [
     title: "Software Developer",
     description:
       "Primarily worked on several ERP solutions built on Django and React. Handled the development process for these applications right from design to development to tetsing to deployment to maintainence.",
+    image: shn.src,
   },
   {
     title: "Web Developer",
     description:
       "Developed several websites for the society and helped organise various events including the biggest debating festival of entire eastern india. Represented the society in several debating events throughout the nation.",
+    image: ds.src,
   },
   {
     title: "Backend Engineer",
     description:
       "Collaborated with the frontend team and other backend developers to come up with an optimal REST API server based on Postgres & ExpressJs for their e-commmerce engine",
+    image: ry.src,
   },
   {
     title: "Full Stack Intern",
     description:
       "Worked with other full stack developers to develop a website for their client which included dynamic blogs, a portfolio and a price estimator.",
+    image: ra.src,
   },
   // {
   //   title: "Technical Content Writer",
@@ -36,6 +43,7 @@ const project_data = [
 const CarouselCell = (props: {
   title: string;
   description: string;
+  image: string;
   rotation: number;
   zTranslate: number | string;
   yTranslate: number | string;
@@ -51,7 +59,7 @@ const CarouselCell = (props: {
       <div className={styles.carousel_cell_wrapper}>
         <div
           className={styles.carousel_cell_picture}
-          style={{ backgroundImage: `url(${secondaryBg.src})` }}
+          style={{ backgroundImage: `url(${props.image})` }}
         ></div>
         <div
           className={styles.carousel_cell_text}
@@ -128,7 +136,7 @@ export default function WorkExperiencesSection(props: { ratio: number }) {
               ].join(" ")}
               style={{
                 transform: `translateZ(-${zTranslate})`,
-                opacity: ratio > 0 ? (ratio < MAX_RATIO + 0.2 ? 0.2 : 1) : 1,
+                opacity: ratio > -0.2 ? (ratio < MAX_RATIO + 0.2 ? 0.2 : 1) : 1,
               }}
             >
               Work Experiences
@@ -146,6 +154,7 @@ export default function WorkExperiencesSection(props: { ratio: number }) {
               <CarouselCell
                 title={elem.title}
                 description={elem.description}
+                image={elem.image as string}
                 rotation={index * angleMultFactor}
                 zTranslate={zTranslate}
                 showText={

@@ -107,6 +107,26 @@ const _require_manifest = {
       weight: 40,
       // name: "image 100",
     },
+    {
+      loadfn: () => import("../../public/images/ra.webp"),
+      weight: 40,
+      // name: "image 100",
+    },
+    {
+      loadfn: () => import("../../public/images/ry.webp"),
+      weight: 40,
+      // name: "image 100",
+    },
+    {
+      loadfn: () => import("../../public/images/shn.webp"),
+      weight: 40,
+      // name: "image 100",
+    },
+    {
+      loadfn: () => import("../../public/images/ds.webp"),
+      weight: 40,
+      // name: "image 100",
+    },
   ],
   home: [
     {
