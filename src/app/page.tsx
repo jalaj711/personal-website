@@ -10,129 +10,88 @@ const _require_manifest = {
     {
       loadfn: () => import("../../public/images/2.webp"),
       weight: 40,
-      // name: "image 100",
     },
     {
       loadfn: () => import("../../public/images/3.webp"),
       weight: 40,
-      // name: "image 100",
     },
     {
       loadfn: () => import("../../public/images/landing_bg.webp"),
       weight: 40,
-      // name: "image 100",
     },
     {
       loadfn: () => import("../../public/images/landing_bg_layer_2.webp"),
       weight: 40,
-      // name: "image 100",
     },
     {
       loadfn: () => import("../../public/images/landing_bg_layer_3.webp"),
       weight: 40,
-      // name: "image 100",
     },
     {
       loadfn: () => import("../../public/images/projects/gs1.webp"),
       weight: 40,
-      // name: "image 100",
     },
     {
       loadfn: () => import("../../public/images/projects/gs2.webp"),
       weight: 40,
-      // name: "image 100",
     },
     {
       loadfn: () => import("../../public/images/projects/gs3.webp"),
       weight: 40,
-      // name: "image 100",
     },
     {
       loadfn: () => import("../../public/images/projects/jb1.webp"),
       weight: 40,
-      // name: "image 100",
     },
     {
       loadfn: () => import("../../public/images/projects/jb2.webp"),
       weight: 40,
-      // name: "image 100",
     },
     {
       loadfn: () => import("../../public/images/projects/jb3.webp"),
       weight: 40,
-      // name: "image 100",
     },
     {
       loadfn: () => import("../../public/images/projects/kcd1.webp"),
       weight: 40,
-      // name: "image 100",
     },
     {
       loadfn: () => import("../../public/images/projects/kcd3.webp"),
       weight: 40,
-      // name: "image 100",
     },
     {
       loadfn: () => import("../../public/images/projects/vistaar_1.webp"),
       weight: 40,
-      // name: "image 100",
     },
     {
       loadfn: () => import("../../public/images/projects/vistaar_3.webp"),
       weight: 40,
-      // name: "image 100",
     },
     {
       loadfn: () => import("../../public/images/projects/vistaar_5.webp"),
       weight: 40,
-      // name: "image 100",
-    },
-    {
-      loadfn: () => import("../../public/images/projects/atd1.webp"),
-      weight: 40,
-      // name: "image 100",
-    },
-    {
-      loadfn: () => import("../../public/images/projects/atd2.webp"),
-      weight: 40,
-      // name: "image 100",
-    },
-    {
-      loadfn: () => import("../../public/images/projects/atd3.webp"),
-      weight: 40,
-      // name: "image 100",
-    },
-    {
-      loadfn: () => import("../../public/images/projects/atd4.webp"),
-      weight: 40,
-      // name: "image 100",
     },
     {
       loadfn: () => import("../../public/images/ra.webp"),
       weight: 40,
-      // name: "image 100",
     },
     {
       loadfn: () => import("../../public/images/ry.webp"),
       weight: 40,
-      // name: "image 100",
     },
     {
       loadfn: () => import("../../public/images/shn.webp"),
       weight: 40,
-      // name: "image 100",
     },
     {
       loadfn: () => import("../../public/images/ds.webp"),
       weight: 40,
-      // name: "image 100",
     },
   ],
   home: [
     {
       loadfn: () => import("../components/Home"),
       weight: 200,
-      // name: "main component",
     },
   ],
 };

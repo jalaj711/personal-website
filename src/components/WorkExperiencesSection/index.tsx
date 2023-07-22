@@ -6,7 +6,7 @@ import shn from "../../../public/images/shn.webp";
 import ds from "../../../public/images/ds.webp";
 import ry from "../../../public/images/ry.webp";
 import ra from "../../../public/images/ra.webp";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, memo, useState } from "react";
 
 const project_data = [
   {
@@ -79,7 +79,7 @@ const CarouselCell = (props: {
   );
 };
 
-export default function WorkExperiencesSection(props: { ratio: number }) {
+function WorkExperiencesSection(props: { ratio: number }) {
   const MAX_RATIO = 2;
   const [zTranslate, setZTranslate] = useState("");
   const [angleMultFactor, setAngleMultFactor] = useState(0);
@@ -176,3 +176,5 @@ export default function WorkExperiencesSection(props: { ratio: number }) {
     </section>
   );
 }
+
+export default memo(WorkExperiencesSection, (_, next) => next.ratio < -1 || next.ratio > 4)

@@ -1,11 +1,11 @@
-"use client";
+
 import styles from "./index.module.css";
-import { Brush, MillionDreams, NT } from "src/fonts";
+import { MillionDreams, NT } from "src/fonts";
 import primaryBg from "../../../public/images/2.webp";
 import secondaryBg from "../../../public/images/3.webp";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, memo } from "react";
 
-export default function AppsSection(props: { ratio: number }) {
+function AppsSection(props: { ratio: number }) {
   const secondaryTextRef = useRef<HTMLHeadingElement | null>(null);
   const prevValue = useRef<number>(0);
   const MAX_RATIO = 3;
@@ -137,3 +137,5 @@ export default function AppsSection(props: { ratio: number }) {
     </section>
   );
 }
+
+export default memo(AppsSection, (_, next) => next.ratio < -1 || next.ratio > 4)

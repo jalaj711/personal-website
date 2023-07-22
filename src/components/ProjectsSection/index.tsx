@@ -13,21 +13,14 @@ import jb2 from "../../../public/images/projects/jb2.webp";
 import jb3 from "../../../public/images/projects/jb3.webp";
 import kcd1 from "../../../public/images/projects/kcd1.webp";
 import kcd3 from "../../../public/images/projects/kcd3.webp";
-import atd1 from "../../../public/images/projects/atd1.webp";
-import atd2 from "../../../public/images/projects/atd2.webp";
-import atd3 from "../../../public/images/projects/atd3.webp";
-import atd4 from "../../../public/images/projects/atd4.webp";
-import bg from "../../../public/images/bg.webp";
-import { createRef, useEffect, useRef, useState } from "react";
+import { createRef, useEffect, memo, useState } from "react";
 import { MillionDreams } from "src/fonts";
 import Chip, {
   ChipGroup,
   DRFChip,
   DjangoChip,
   FigmaChip,
-  FlaskChip,
   JSChip,
-  MySqlChip,
   PostgresChip,
   ReactChip,
   ReduxChip,
@@ -94,7 +87,7 @@ const RotatingImagesGear = (props: {
   );
 };
 
-export default function ProjectsSection(props: { ratio: number }) {
+function ProjectsSection(props: { ratio: number }) {
   const { ratio } = props;
   const MAX_RATIO = 3;
   const elemRef = createRef<HTMLDivElement>();
@@ -328,3 +321,5 @@ export default function ProjectsSection(props: { ratio: number }) {
     </section>
   );
 }
+
+export default memo(ProjectsSection, (_, next) => next.ratio < -1 || next.ratio > 4)

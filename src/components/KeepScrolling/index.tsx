@@ -1,6 +1,8 @@
 import { NT } from "src/fonts";
 import styles from "./index.module.css";
-export default function KeepScrolling(props: {
+import { memo } from "react";
+
+function KeepScrolling(props: {
   scrolled?: boolean;
   done?: boolean;
 }) {
@@ -11,3 +13,5 @@ export default function KeepScrolling(props: {
     </div>
   );
 }
+
+export default memo(KeepScrolling, (prev, next) => prev.scrolled === next.scrolled && prev.done === next.done)

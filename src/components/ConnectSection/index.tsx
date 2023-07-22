@@ -1,12 +1,8 @@
-"use client";
-
 import styles from "./index.module.css";
 import { MillionDreams } from "src/fonts";
-// import bg from "../../../public/images/bg.webp";
-// import secondaryBg from "../../../public/images/3.webp";
-import { createRef } from "react";
+import { createRef, memo } from "react";
 
-export default function ConnectSection(props: { ratio: number }) {
+function ConnectSection(props: { ratio: number }) {
   const { ratio } = props;
   const MAX_RATIO = 3;
   const elemRef = createRef<HTMLDivElement>();
@@ -100,3 +96,5 @@ export default function ConnectSection(props: { ratio: number }) {
     </section>
   );
 }
+
+export default memo(ConnectSection, (_, next) => next.ratio < -1 || next.ratio > 2)
