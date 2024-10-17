@@ -10,13 +10,13 @@
 
 .image_container {
   position: relative;
-  height: 600px;
-  width: 400px;
+  height: 560px;
+  width: 360px;
 }
 
 .heading_image {
-  height: 600px;
-  width: 400px;
+  height: 540px;
+  width: 360px;
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -32,9 +32,9 @@
 }
 
 .heading_title {
-  font-size: 10rem;
+  font-size: 9rem;
   animation: move 2s infinite alternate linear;
-  transition: all 1.5s ease-out;
+  transition: all 1.5s 0.5s ease-out;
   position: absolute;
 }
 
@@ -117,8 +117,7 @@
 .being_animated .heading_title:nth-child(8) {
   animation-delay: 4.4s !important;
 }
-
-.heading_image:nth-child(1):not(.being_animated .heading_image) {
+.heading_image:nth-child(2):not(.being_animated .heading_image) {
   animation: fadein 2s 7s ease-out forwards, opacity 2s 3s infinite alternate linear;
 }
 

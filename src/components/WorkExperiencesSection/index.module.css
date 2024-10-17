@@ -76,7 +76,7 @@
   align-items: center;
 }
 .carousel_cell {
-  width: clamp(300px, 40vw, 600px);
+  width: clamp(300px, 40vw, 500px);
   /* height: clamp(225px, 30vw, 375px); */
   perspective: 1000px;
 }
@@ -88,8 +88,8 @@
 }
 
 .carousel_cell_picture {
-  width: clamp(300px, 40vw, 600px);
-  height: clamp(225px, 30vw, 450px);
+  width: clamp(300px, 40vw, 500px);
+  height: clamp(225px, 30vw, 375px);
   border-radius: 24px;
   background-position: center;
   background-repeat: no-repeat;
@@ -100,13 +100,14 @@
   text-align: center;
   width: 100%;
   transition: all 0.5s ease-in-out;
+  position: absolute;
 }
 
 .carousel_cell_header {
-  font-size: clamp(56px, 7vw, 72px);
+  font-size: clamp(48px, 6vw, 64px);
   margin-top: -24px;
 }
 
 .carousel_cell_description {
-  font-size: clamp(14px, 2vw, 20px);
+  font-size: clamp(14px, 2vw, 18px);
 }

@@ -70,8 +70,8 @@
 }
 
 .rotating_images {
-  width: clamp(280px, 28vw, 400px);
-  height: clamp(210px, 21vw, 300px);
+  width: clamp(280px, 24vw, 380px);
+  height: clamp(210px, 18vw, 285px);
   position: absolute;
   background-position: center;
   background-repeat: no-repeat;

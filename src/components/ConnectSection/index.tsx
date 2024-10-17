@@ -69,9 +69,14 @@ function ConnectSection(props: { ratio: number }) {
             }%)`,
           }}
         >
+        <a
+          href="mailto:jalaj1318@gmail.com"
+          target="_blank"
+        >
           <h1 className={[styles.text, MillionDreams.className].join(" ")}>
             Mail Me
           </h1>
+          </a>
         </div>
         <div
           className={styles.contact_element}
