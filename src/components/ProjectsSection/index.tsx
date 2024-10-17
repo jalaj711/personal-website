@@ -5,26 +5,18 @@ import styles from "./index.module.css";
 import vistaar_1 from "../../../public/images/projects/vistaar_1.webp";
 import vistaar_3 from "../../../public/images/projects/vistaar_3.webp";
 import vistaar_5 from "../../../public/images/projects/vistaar_5.webp";
-import gs1 from "../../../public/images/projects/gs1.webp";
-import gs2 from "../../../public/images/projects/gs2.webp";
-import gs3 from "../../../public/images/projects/gs3.webp";
-import jb1 from "../../../public/images/projects/jb1.webp";
-import jb2 from "../../../public/images/projects/jb2.webp";
-import jb3 from "../../../public/images/projects/jb3.webp";
+import gs1 from "../../../public/images/projects/xv62.png";
+import gs2 from "../../../public/images/projects/xv61.png";
+import gs3 from "../../../public/images/projects/xv63.png";
+import jb1 from "../../../public/images/projects/jb1.png";
+import jb2 from "../../../public/images/projects/jb2.png";
+import jb3 from "../../../public/images/projects/jb3.png";
 import kcd1 from "../../../public/images/projects/kcd1.webp";
 import kcd3 from "../../../public/images/projects/kcd3.webp";
 import { createRef, useEffect, memo, useState } from "react";
 import { MillionDreams } from "src/fonts";
 import Chip, {
-  ChipGroup,
-  DRFChip,
-  DjangoChip,
-  FigmaChip,
-  JSChip,
-  PostgresChip,
-  ReactChip,
-  ReduxChip,
-  TSChip,
+  ChipGroup
 } from "../Chip";
 
 const RotatingImagesGear = (props: {
@@ -151,12 +143,12 @@ function ProjectsSection(props: { ratio: number }) {
               Jewellery Billing
             </h2>
             <ChipGroup>
-              <DjangoChip />
-              <ReactChip />
-              <ReduxChip />
-              <DRFChip />
-              <TSChip />
-              <PostgresChip />
+              <Chip>Django</Chip>
+              <Chip>React</Chip>
+              <Chip>Redux</Chip>
+              <Chip>DRF</Chip>
+              <Chip>TS</Chip>
+              <Chip>Postgres</Chip>
             </ChipGroup>
             <div className={styles.text}>
               It&apos; a <b>full blown ERP solution</b> for Jewellery stores. It
@@ -165,7 +157,7 @@ function ProjectsSection(props: { ratio: number }) {
               highly scalable and is currently in use by multiple stores helping
               them manage{" "}
               <b>
-                over 3.5k+ customers, 1k+ products and handling INR 30crores+ in
+                over 15k+ customers, 7k+ products and handling INR 60crores+ in
                 sales
               </b>{" "}
               annually.
@@ -195,22 +187,22 @@ function ProjectsSection(props: { ratio: number }) {
             }}
           >
             <h2 className={[styles.h2, MillionDreams.className].join(" ")}>
-              Kictehndotcom
+              Content Display Manager
             </h2>
             <ChipGroup>
-              <DjangoChip />
-              <ReactChip />
-              <DRFChip />
-              <JSChip />
-              <FigmaChip />
+              <Chip>Django</Chip>
+              <Chip>React</Chip>
+              <Chip>DRF</Chip>
+              <Chip>Redis</Chip>
+              <Chip>Celery</Chip>
             </ChipGroup>
             <div className={styles.text}>
-              Full Stack website for the modular kitchen design and development
-              company kitchendotcom. It features{" "}
-              <b>a dynamic portfolio, a blog sub-site and a price estimator</b>{" "}
-              for their company. It comes with <b>firebase powered</b> mobile
-              authentication, helping the company attract hundreds of new
-              customers every month.
+              An application to convert <b>Android TVs to Smart Signages</b>. This app
+              allows the end user to control thousands of displays from a 
+              single endpoint helping clients seamlessly enhance customer 
+              engagement. The application is currently used by enterprise clients to manage over 
+              <b> 500 displays</b> running more than <b>300GB of content</b> for a total
+                of <b>4,500+ hours of cumulative daily runtime</b> 
             </div>
           </div>
         </div>
@@ -225,9 +217,9 @@ function ProjectsSection(props: { ratio: number }) {
               Vistaar
             </h2>
             <ChipGroup>
-              <Chip color={{ r: 255, g: 100, b: 100 }}>HTML5</Chip>
-              <JSChip />
-              <Chip color={{ r: 100, g: 100, b: 255 }}>css3</Chip>
+              <Chip>HTML5</Chip>
+              <Chip >JS</Chip>
+              <Chip >css3</Chip>
               <Chip>Locomotive</Chip>
               <Chip>Scroll Effects</Chip>
             </ChipGroup>
@@ -261,7 +253,7 @@ function ProjectsSection(props: { ratio: number }) {
             </h2>
             <ChipGroup>
               <Chip>React Native</Chip>
-              <TSChip />
+              <Chip>TS</Chip>
             </ChipGroup>
             <div className={styles.text}>
               A <b>cross platform mobile application</b> for students to track
@@ -294,26 +286,22 @@ function ProjectsSection(props: { ratio: number }) {
             }}
           >
             <h2 className={[styles.h2, MillionDreams.className].join(" ")}>
-              Gastos
+              Risc-V XV6 OS
             </h2>
             <ChipGroup>
-              <DjangoChip />
-              <ReactChip />
-              <ReduxChip />
-              <DRFChip />
-              <TSChip />
-              <PostgresChip />
+              <Chip>C</Chip>
+              <Chip>ASM</Chip>
+              <Chip>GDB</Chip>
+              <Chip>GCC</Chip>
+              <Chip>QEMU</Chip>
             </ChipGroup>
             <div className={styles.text}>
-              Built on Django, React and Typescript, Gastos is a
-              <b> finance-tracking app</b> which helps you keep track of your
-              expenses and incomes. It comes with features like{" "}
+              Built on C and Assembly Language, this is an
+              <b> operating system</b> based on the original XV6 system. 
+              It comes with features like{" "}
               <b>
-                multi-device support, custom color coded labels, multi wallet
-                tracking
-              </b>{" "}
-              and helps users find exactly where they are overspending by giving
-              them about <b>daily, weekly and monthly insights</b>.
+                copy on write fork, superpages and threading.
+              </b>{" "}. It supports new system calls like kpgtbl, trace, backtrace & sigalarm
             </div>
           </div>
         </div>
