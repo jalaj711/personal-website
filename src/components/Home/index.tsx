@@ -8,7 +8,7 @@ import ReferencesSection from "src/components/ReferencesSection";
 import Landing from "src/components/Landing";
 import ConnectSection from "src/components/ConnectSection";
 import KeepScrolling from "../KeepScrolling";
-import AboutSection from "src/components/AboutSection";
+import SkillsSection from "src/components/SkillsSection";
 import Footer from "../Footer";
 
 export default function Home() {
@@ -25,9 +25,9 @@ export default function Home() {
       <ProjectsSection ratio={ratio - 5} />
       <WorkExperiencesSection ratio={ratio - 9} />
       <ReferencesSection ratio={ratio - 13} />
-      {/* <AboutSection ratio={ratio-17} /> */}
-      <ConnectSection ratio={ratio - 17} />
-      <KeepScrolling scrolled={ratio > 0.1} done={ratio >= 14.5} />
+      <SkillsSection ratio={ratio - 17} />
+      <ConnectSection ratio={ratio - 21} />
+      <KeepScrolling scrolled={ratio > 0.1} done={ratio >= 22.5} />
       <Footer />
     </main>
   );
