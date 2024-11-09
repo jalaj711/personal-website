@@ -4,9 +4,9 @@ import { createRef, memo } from "react";
 
 function ConnectSection(props: { ratio: number }) {
   const { ratio } = props;
-  const MAX_RATIO = 3;
+  const MAX_RATIO = 2;
   const elemRef = createRef<HTMLDivElement>();
-
+  console.log(ratio);
   return (
     <section className={styles.section}>
       <div

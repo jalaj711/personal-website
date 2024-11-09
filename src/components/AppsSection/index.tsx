@@ -1,6 +1,6 @@
 
 import styles from "./index.module.css";
-import { MillionDreams, NT } from "src/fonts";
+import { Brush, MillionDreams } from "src/fonts";
 import primaryBg from "../../../public/images/2.webp";
 import secondaryBg from "../../../public/images/3.webp";
 import { useEffect, useRef, memo } from "react";
@@ -16,7 +16,7 @@ function AppsSection(props: { ratio: number }) {
       props.ratio > 0 &&
       props.ratio < MAX_RATIO
     ) {
-        const values = ["APPEALING", "SCALABLE", "REAL TIME", "RELIABLE"];
+        const values = ["appealing", "scalable", "real time", "reliable"];
         if (props.ratio < 0.3) {
           prevValue.current = props.ratio;
           secondaryTextRef.current.innerText = values[0];
@@ -33,7 +33,7 @@ function AppsSection(props: { ratio: number }) {
           prevValue.current = props.ratio;
           var text = "";
           for (var i = 0; i < Math.round(Math.random() * 8 + 4); i++) {
-            text += "ABC DEF GHI JKL MNOP QRST UVWX YZ"[
+            text += "abc def ghi jkl mnop qrst uvwx yz"[
               Math.round(Math.random() * 32)
             ];
           }
@@ -63,12 +63,12 @@ function AppsSection(props: { ratio: number }) {
             i make apps that are
           </h1>
           <h1
-            className={[styles.h1, NT.className, styles.secondary_header].join(
+            className={[styles.h1, Brush.className, styles.secondary_header].join(
               " "
             )}
             ref={secondaryTextRef}
           >
-            APPEALING
+            appealing
           </h1>
         </div>
       </div>
