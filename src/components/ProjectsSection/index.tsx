@@ -2,9 +2,9 @@
 
 import styles from "./index.module.css";
 // import { MillionDreams, NT } from "src/fonts";
-import vistaar_1 from "../../../public/images/projects/vistaar_1.webp";
-import vistaar_3 from "../../../public/images/projects/vistaar_3.webp";
-import vistaar_5 from "../../../public/images/projects/vistaar_5.webp";
+import vistaar_1 from "../../../public/images/projects/gocrypt.png";
+import vistaar_3 from "../../../public/images/hex.png";
+import vistaar_5 from "../../../public/images/os.png";
 import gs1 from "../../../public/images/projects/xv62.png";
 import gs2 from "../../../public/images/projects/xv61.png";
 import gs3 from "../../../public/images/projects/xv63.png";
@@ -214,23 +214,20 @@ function ProjectsSection(props: { ratio: number }) {
             }}
           >
             <h2 className={[styles.h2, MillionDreams.className].join(" ")}>
-              Vistaar
+              GoCrypto
             </h2>
             <ChipGroup>
-              <Chip>HTML5</Chip>
-              <Chip >JS</Chip>
-              <Chip >css3</Chip>
-              <Chip>Locomotive</Chip>
-              <Chip>Scroll Effects</Chip>
+              <Chip>GoLang</Chip>
+              <Chip >Cryptography</Chip>
+              <Chip >AES</Chip>
+              <Chip>DES</Chip>
+              <Chip>SHA</Chip>
             </ChipGroup>
             <div className={styles.text}>
-              Website for eastern India&apos;s <b>biggest debating festival</b>.
-              It uses locomotive js to power its appealing{" "}
-              <b>scroll animations and a unique horizontal layout</b>. The
-              website is designed to be minimal while being elegant and
-              appealing to be able to cater to the
-              <b> 1.5k+ participants</b> from a dozen different reputed colleges
-              that were expected to participate in the event.
+              A <b> zero dependency </b> implementation of popular cryptography primitives
+              such as <b>AES128, AES192, AES256, DES, 3DES128, 3DES192 and SHA512</b>.
+              Supports all standard cryptography modes such as <b>ECB, CBC, CFB & OFB</b>.
+              Also includes out of box support for PKCS7 and ISO padding.
             </div>
           </div>
           <RotatingImagesGear

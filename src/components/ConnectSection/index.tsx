@@ -78,25 +78,6 @@ function ConnectSection(props: { ratio: number }) {
           </h1>
           </a>
         </div>
-        <div
-          className={styles.contact_element}
-          style={{
-            transform: `translateX(${
-              ratio > 0 && ratio < MAX_RATIO
-                ? Math.sin((ratio / MAX_RATIO) * -30) * 50
-                : 0
-            }%)`,
-          }}
-        >
-        <a
-          href="https://www.instagram.com/jalajkumar_/"
-          target="_blank"
-        >
-          <h1 className={[styles.text, MillionDreams.className].join(" ")}>
-            Instagram
-          </h1>
-          </a>
-        </div>
       </div>
     </section>
   );
