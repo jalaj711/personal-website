@@ -13,7 +13,7 @@
 
 .section {
   width: 100vw;
-  height: 400vh;
+  height: 100vh;
   color: #cdc6be;
   position: relative;
 }
@@ -47,24 +47,13 @@
 
 }
 
-.in_view {
-  position: fixed;
-}
-
-.out_of_view {
-  position: absolute;
-  top: 300vh;
-}
-
 .text_container {
   width: 100vw;
-  height: 200vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  position: absolute;
-  top: 100vh;
 }
 
 .contact_element .text {
