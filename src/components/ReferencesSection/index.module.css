@@ -56,6 +56,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  position: relative;
 }
 
 
@@ -82,6 +83,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  filter: brightness(0.6);
 }
 
 .rotating_images {
@@ -115,4 +117,20 @@
 .info_container .text {
   font-size: clamp(18px, 1vw, 28px);
   font-weight: 200;
+}
+
+.text_wrapper {
+  position: absolute;
+}
+
+.textBig {
+  text-align: center;
+  font-weight: 100;
+  margin: 0;
+  /* position: absolute; */
+  text-align: center;
+  /* top: 24px; */
+  line-height: 1;
+  font-size: clamp(32px, 3vw, 54px);
+  word-wrap: break-word;
 }
