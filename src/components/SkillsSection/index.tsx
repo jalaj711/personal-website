@@ -14,7 +14,7 @@ function ContactElement(props: {
   theta: number;
   r: number;
   name: string;
-  link: string;
+  stars: number;
 }) {
   return (
     <div
@@ -26,11 +26,25 @@ function ContactElement(props: {
         opacity: `${thetaToOpacity(props.theta)}`,
       }}
     >
-      <a href={props.link} target="_blank">
-        <h1 className={[styles.text, MillionDreams.className].join(" ")}>
-          {props.name}
-        </h1>
-      </a>
+      <h1 className={[styles.text, MillionDreams.className].join(" ")}>
+        {props.name}
+      </h1>
+      <div className={styles.stars}>
+        <div className={styles.star_wrap}>
+          {Array(props.stars)
+            .fill(0)
+            .map((_, i) => (
+              <div className={styles.star_stroke} key={i}></div>
+            ))}
+          {Array(5 - props.stars)
+            .fill(0)
+            .map((_, i) => (
+              <div className={styles.star_stroke} key={i}>
+                <div className={styles.star_empty}></div>
+              </div>
+            ))}
+        </div>
+      </div>
     </div>
   );
 }
@@ -48,61 +62,61 @@ function ConnectSection(props: { ratio: number }) {
         className={[
           styles.container,
           ratio > 0 && ratio < MAX_RATIO && styles.in_view,
-          ratio >= MAX_RATIO-0.5 && styles.out_of_view,
+          ratio >= MAX_RATIO - 0.5 && styles.out_of_view,
         ].join(" ")}
         ref={elemRef}
       >
         <div className={styles.headers}>
           <h1 className={[styles.h1, MillionDreams.className].join(" ")}>
-            Skills
+            ...because
           </h1>
         </div>
         <div className={[styles.text_container].join(" ")} ref={elemRef}>
           <ContactElement
-            name="Github"
-            link="https://github.com/jalaj711/"
+            name="Python"
+            stars={4}
             theta={theta}
             r={r}
           />
           <ContactElement
-            name="LinkedIn"
-            link="https://www.linkedin.com/in/jalaj-kumar-b29248232/"
+            name="Javascript"
+            stars={4}
             theta={theta - Math.PI / 4}
             r={r}
           />
           <ContactElement
-            name="Mail Me"
-            link="mailto:jalaj1318@gmail.com"
+            name="GoLang"
+            stars={3}
             theta={theta - (2 * Math.PI) / 4}
             r={r}
           />
           <ContactElement
-            name="Instagram"
-            link="https://www.instagram.com/jalajkumar_/"
+            name="C/C++"
+            stars={4}
             theta={theta - (3 * Math.PI) / 4}
             r={r}
           />
           <ContactElement
-            name="Github"
-            link="https://github.com/jalaj711/"
+            name="Django"
+            stars={4}
             theta={theta - (4 * Math.PI) / 4}
             r={r}
           />
           <ContactElement
-            name="LinkedIn"
-            link="https://www.linkedin.com/in/jalaj-kumar-b29248232/"
+            name="React"
+            stars={4}
             theta={theta - (5 * Math.PI) / 4}
             r={r}
           />
           <ContactElement
-            name="Mail Me"
-            link="mailto:jalaj1318@gmail.com"
+            name="SQL"
+            stars={4}
             theta={theta - (6 * Math.PI) / 4}
             r={r}
           />
           <ContactElement
-            name="Instagram"
-            link="https://www.instagram.com/jalajkumar_/"
+            name="OS"
+            stars={3}
             theta={theta - (7 * Math.PI) / 4}
             r={r}
           />

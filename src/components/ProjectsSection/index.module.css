@@ -7,7 +7,7 @@
   text-align: center;
   /* top: 24px; */
   line-height: 1;
-  font-size: clamp(64px, 7vw, 108px);
+  font-size: clamp(60px, 7vw, 108px);
   word-wrap: break-word;
 }
 

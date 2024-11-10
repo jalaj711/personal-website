@@ -125,10 +125,10 @@ function ProjectsSection(props: { ratio: number }) {
         }}
         ref={elemRef}
       >
-        <div className={styles.container}>
+        <div className={styles.container} style={{width: "100vw"}}>
           <div className={styles.headers}>
             <h1 className={[styles.h1, MillionDreams.className].join(" ")}>
-              Projects
+              Talk is cheap <br/><br/> Show me the code.
             </h1>
           </div>
         </div>

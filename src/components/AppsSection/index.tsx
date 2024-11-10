@@ -16,7 +16,7 @@ function AppsSection(props: { ratio: number }) {
       props.ratio > 0 &&
       props.ratio < MAX_RATIO
     ) {
-        const values = ["appealing", "scalable", "real time", "reliable"];
+        const values = ["creative", "functional", "scalable", "reliable"];
         if (props.ratio < 0.3) {
           prevValue.current = props.ratio;
           secondaryTextRef.current.innerText = values[0];
@@ -68,7 +68,7 @@ function AppsSection(props: { ratio: number }) {
             )}
             ref={secondaryTextRef}
           >
-            appealing
+            creative
           </h1>
         </div>
       </div>

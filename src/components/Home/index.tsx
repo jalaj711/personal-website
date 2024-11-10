@@ -22,10 +22,10 @@ export default function Home() {
     <main className={styles.main}>
       <Landing />
       <AppsSection ratio={ratio - 1} />
-      <ProjectsSection ratio={ratio - 5} />
-      <WorkExperiencesSection ratio={ratio - 9} />
-      <ReferencesSection ratio={ratio - 13} />
-      <SkillsSection ratio={ratio - 17} />
+      <SkillsSection ratio={ratio - 5} />
+      <ProjectsSection ratio={ratio - 9} />
+      <WorkExperiencesSection ratio={ratio - 13} />
+      <ReferencesSection ratio={ratio - 17} />
       <ConnectSection ratio={ratio - 21} />
       <KeepScrolling scrolled={ratio > 0.1} done={ratio >= 22.5} />
       <Footer />
