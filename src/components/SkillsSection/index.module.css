@@ -66,7 +66,8 @@
 }
 
 .contact_element .text {
-  font-size: clamp(32px, 4vw, 64px)
+  font-size: clamp(32px, 4vw, 64px);
+  text-align: center;
 }
 
 
