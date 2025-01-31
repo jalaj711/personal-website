@@ -15,9 +15,7 @@ import kcd1 from "../../../public/images/projects/kcd1.webp";
 import kcd3 from "../../../public/images/projects/kcd3.webp";
 import { createRef, useEffect, memo, useState } from "react";
 import { MillionDreams } from "src/fonts";
-import Chip, {
-  ChipGroup
-} from "../Chip";
+import Chip, { ChipGroup } from "../Chip";
 
 const RotatingImagesGear = (props: {
   rotation: number;
@@ -125,10 +123,11 @@ function ProjectsSection(props: { ratio: number }) {
         }}
         ref={elemRef}
       >
-        <div className={styles.container} style={{width: "100vw"}}>
+        <div className={styles.container} style={{ width: "100vw" }}>
           <div className={styles.headers}>
             <h1 className={[styles.h1, MillionDreams.className].join(" ")}>
-              Talk is cheap <br/><br/> Show me the code.
+              Talk is cheap <br />
+              <br /> Show me the code.
             </h1>
           </div>
         </div>
@@ -140,34 +139,28 @@ function ProjectsSection(props: { ratio: number }) {
             }}
           >
             <h2 className={[styles.h2, MillionDreams.className].join(" ")}>
-              Jewellery Billing
+              Risc-V XV6 OS
             </h2>
             <ChipGroup>
-              <Chip>Django</Chip>
-              <Chip>React</Chip>
-              <Chip>Redux</Chip>
-              <Chip>DRF</Chip>
-              <Chip>TS</Chip>
-              <Chip>Postgres</Chip>
+              <Chip>C</Chip>
+              <Chip>ASM</Chip>
+              <Chip>GDB</Chip>
+              <Chip>GCC</Chip>
+              <Chip>QEMU</Chip>
             </ChipGroup>
             <div className={styles.text}>
-              It&apos; a <b>full blown ERP solution</b> for Jewellery stores. It
-              features customer, supplier and staff management, custom billing
-              solution, multi-user billing and real time price updates. It is
-              highly scalable and is currently in use by multiple stores helping
-              them manage{" "}
-              <b>
-                over 15k+ customers, 7k+ products and handling INR 60crores+ in
-                sales
-              </b>{" "}
-              annually.
+              Built on C and Assembly Language, this is an
+              <b> operating system</b> based on the original XV6 system. It
+              comes with features like{" "}
+              <b>copy on write fork, superpages and threading.</b> . It supports
+              new system calls like kpgtbl, trace, backtrace & sigalarm
             </div>
           </div>
           <RotatingImagesGear
             rotation={
               (ratio > 0 ? (ratio < MAX_RATIO ? ratio : MAX_RATIO) : 0) * 45
             }
-            images={[jb1.src, jb2.src, jb3.src]}
+            images={[gs2.src, gs1.src, gs3.src]}
           />
         </div>
 
@@ -197,12 +190,13 @@ function ProjectsSection(props: { ratio: number }) {
               <Chip>Celery</Chip>
             </ChipGroup>
             <div className={styles.text}>
-              An application to convert <b>Android TVs to Smart Signages</b>. This app
-              allows the end user to control thousands of displays from a 
-              single endpoint helping clients seamlessly enhance customer 
-              engagement. The application is currently used by enterprise clients to manage over 
-              <b> 500 displays</b> running more than <b>300GB of content</b> for a total
-                of <b>4,500+ hours of cumulative daily runtime</b> 
+              An application to convert <b>Android TVs to Smart Signages</b>.
+              This app allows the end user to control thousands of displays from
+              a single endpoint helping clients seamlessly enhance customer
+              engagement. The application is currently used by enterprise
+              clients to manage over
+              <b> 500 displays</b> running more than <b>300GB of content</b> for
+              a total of <b>4,500+ hours of cumulative daily runtime</b>
             </div>
           </div>
         </div>
@@ -218,16 +212,18 @@ function ProjectsSection(props: { ratio: number }) {
             </h2>
             <ChipGroup>
               <Chip>GoLang</Chip>
-              <Chip >Cryptography</Chip>
-              <Chip >AES</Chip>
+              <Chip>Cryptography</Chip>
+              <Chip>AES</Chip>
               <Chip>DES</Chip>
               <Chip>SHA</Chip>
             </ChipGroup>
             <div className={styles.text}>
-              A <b> zero dependency </b> implementation of popular cryptography primitives
-              such as <b>AES128, AES192, AES256, DES, 3DES128, 3DES192 and SHA512</b>.
-              Supports all standard cryptography modes such as <b>ECB, CBC, CFB & OFB</b>.
-              Also includes out of box support for PKCS7 and ISO padding.
+              A <b> zero dependency </b> implementation of popular cryptography
+              primitives such as{" "}
+              <b>AES128, AES192, AES256, DES, 3DES128, 3DES192 and SHA512</b>.
+              Supports all standard cryptography modes such as{" "}
+              <b>ECB, CBC, CFB & OFB</b>. Also includes out of box support for
+              PKCS7 and ISO padding.
             </div>
           </div>
           <RotatingImagesGear
@@ -274,7 +270,7 @@ function ProjectsSection(props: { ratio: number }) {
               (ratio > 0 ? (ratio < MAX_RATIO ? ratio : MAX_RATIO) : 0) * 45
             }
             reverse
-            images={[gs2.src, gs1.src, gs3.src]}
+            images={[jb1.src, jb2.src, jb3.src]}
           />
           <div
             className={styles.info_container}
@@ -283,22 +279,27 @@ function ProjectsSection(props: { ratio: number }) {
             }}
           >
             <h2 className={[styles.h2, MillionDreams.className].join(" ")}>
-              Risc-V XV6 OS
+              Jewellery Billing
             </h2>
             <ChipGroup>
-              <Chip>C</Chip>
-              <Chip>ASM</Chip>
-              <Chip>GDB</Chip>
-              <Chip>GCC</Chip>
-              <Chip>QEMU</Chip>
+              <Chip>Django</Chip>
+              <Chip>React</Chip>
+              <Chip>Redux</Chip>
+              <Chip>DRF</Chip>
+              <Chip>TS</Chip>
+              <Chip>Postgres</Chip>
             </ChipGroup>
             <div className={styles.text}>
-              Built on C and Assembly Language, this is an
-              <b> operating system</b> based on the original XV6 system. 
-              It comes with features like{" "}
+              It&apos; a <b>full blown ERP solution</b> for Jewellery stores. It
+              features customer, supplier and staff management, custom billing
+              solution, multi-user billing and real time price updates. It is
+              highly scalable and is currently in use by multiple stores helping
+              them manage{" "}
               <b>
-                copy on write fork, superpages and threading.
-              </b>{" "}. It supports new system calls like kpgtbl, trace, backtrace & sigalarm
+                over 15k+ customers, 7k+ products and handling INR 60crores+ in
+                sales
+              </b>{" "}
+              annually.
             </div>
           </div>
         </div>
@@ -307,4 +308,7 @@ function ProjectsSection(props: { ratio: number }) {
   );
 }
 
-export default memo(ProjectsSection, (_, next) => next.ratio < -1 || next.ratio > 4)
+export default memo(
+  ProjectsSection,
+  (_, next) => next.ratio < -1 || next.ratio > 4
+);

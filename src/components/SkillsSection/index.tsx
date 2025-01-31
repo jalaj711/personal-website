@@ -73,32 +73,32 @@ function ConnectSection(props: { ratio: number }) {
         </div>
         <div className={[styles.text_container].join(" ")} ref={elemRef}>
           <ContactElement
-            name="Python"
+            name="Rust"
             stars={4}
             theta={theta}
             r={r}
           />
           <ContactElement
-            name="Javascript"
+            name="C/C++"
             stars={4}
             theta={theta - Math.PI / 4}
             r={r}
           />
           <ContactElement
-            name="GoLang"
-            stars={3}
+            name="OS"
+            stars={4}
             theta={theta - (2 * Math.PI) / 4}
             r={r}
           />
           <ContactElement
-            name="C/C++"
+            name="Python"
             stars={4}
             theta={theta - (3 * Math.PI) / 4}
             r={r}
           />
           <ContactElement
-            name="Django"
-            stars={4}
+            name="GoLang"
+            stars={3}
             theta={theta - (4 * Math.PI) / 4}
             r={r}
           />
@@ -115,7 +115,7 @@ function ConnectSection(props: { ratio: number }) {
             r={r}
           />
           <ContactElement
-            name="OS"
+            name="Javascript"
             stars={3}
             theta={theta - (7 * Math.PI) / 4}
             r={r}
